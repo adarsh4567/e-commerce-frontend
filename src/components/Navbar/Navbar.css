@@ -103,21 +103,17 @@ header nav .right .cart_btn{
     cursor: pointer;
     margin-top: 2px;
     padding: 8px;
-    border-radius: 2px;
-    border: 1px solid #131921;
     align-items: center;
     justify-content: space-between;
     margin-right: 3px;
 }
-
-header nav .right .cart_btn:hover{
-    border: 1px solid white;
-}
-
 header nav .right .cart_btn #icon{
-    margin-right: 10px;
+    margin-right: 8px;
     color: #fff;
     margin-top: 2px;
+}
+header nav .right .cart_btn #icon:hover{
+   color: red;
 }
 
 header nav .right .cart_btn p{

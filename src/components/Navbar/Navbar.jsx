@@ -3,7 +3,7 @@ import './Navbar.css';
 import logo from '../../assets/logo-3.png'
 import Avatar from '@mui/material/Avatar';
 import Badge from '@mui/material/Badge'
-import { Search, ShoppingCart } from '@mui/icons-material';
+import {ShoppingCart } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import {AiOutlineSearch} from 'react-icons/ai'
 
@@ -28,7 +28,7 @@ const Navbar = () => {
               </div>
               <div className='cart_btn'>
                 <Badge badgeContent={4} color='primary'>
-                  <ShoppingCart style={{color:'white'}} />
+                  <ShoppingCart id='icon' style={{color:'white'}} />
                 </Badge>
                 <p>Cart</p>
               </div>
