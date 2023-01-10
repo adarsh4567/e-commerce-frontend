@@ -1,11 +1,12 @@
 import React from 'react'
 import './Navbar.css';
 import logo from '../../assets/logo-3.png'
-<<<<<<< HEAD
-import SearchIcon from '@mui/icons-material/Search';
+import Avatar from '@mui/material/Avatar';
+import Badge from '@mui/material/Badge'
+import { Search, ShoppingCart } from '@mui/icons-material';
+import { Button } from '@mui/material';
+import {AiOutlineSearch} from 'react-icons/ai'
 
-=======
->>>>>>> 498ebe97b0e76e4d32ad2d095333b9825b9bc5a1
 const Navbar = () => {
   return (
     <header>
@@ -14,12 +15,25 @@ const Navbar = () => {
                 <div className='navlogo'>
                     <img src={logo} alt='Not loaded'/>
                 </div>
-<<<<<<< HEAD
-               <SearchIcon id='fantom'/>
-=======
->>>>>>> 498ebe97b0e76e4d32ad2d095333b9825b9bc5a1
+               <div className='nav_searchbaar'>
+                <input type='text' name='' id=''/>
+                <div className='search_icon'>
+                <AiOutlineSearch style={{fontWeight:'800',fontSize:'1.5rem'}}/>
+               </div>
+               </div>
             </div>
-            <div className='right'></div>
+            <div className='right'>
+              <div className='nav_btn'>
+                <Button variant='outline'>Sign In</Button>
+              </div>
+              <div className='cart_btn'>
+                <Badge badgeContent={4} color='primary'>
+                  <ShoppingCart style={{color:'white'}} />
+                </Badge>
+                <p>Cart</p>
+              </div>
+              <Avatar className='avtar'/>
+            </div>
         </nav>
     </header>
   )
