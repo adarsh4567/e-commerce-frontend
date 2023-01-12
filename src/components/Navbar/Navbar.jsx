@@ -3,7 +3,7 @@ import './Navbar.css';
 import logo from '../../assets/logo-3.png'
 import Avatar from '@mui/material/Avatar';
 import Badge from '@mui/material/Badge'
-import {ShoppingCart } from '@mui/icons-material';
+import {ShoppingCart} from '@mui/icons-material';
 import { Button } from '@mui/material';
 import {AiOutlineSearch} from 'react-icons/ai'
 
