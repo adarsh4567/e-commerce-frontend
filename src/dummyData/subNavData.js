@@ -1,1 +1,0 @@
-export const subNavData = ['All','Mobile','Bestseller','Fashion','Customer services','Electronics','Special Collection']

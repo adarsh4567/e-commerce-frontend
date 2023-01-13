@@ -1,5 +1,5 @@
 import React from 'react'
-import { subNavData } from '../../dummyData/subNavData';
+import  {subNavData}  from '../../helper/dummy_data'
 import './subNav.css';
 
 const SubNav = () => {
