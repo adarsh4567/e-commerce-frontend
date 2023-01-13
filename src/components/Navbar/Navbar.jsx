@@ -20,7 +20,6 @@ const Navbar = () => {
                   </div>
                 </div>
             </div>
-            <div className='right'></div>
         </nav>
     </header>
   )
