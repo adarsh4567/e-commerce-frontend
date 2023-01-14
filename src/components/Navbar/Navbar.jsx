@@ -13,7 +13,7 @@ const Navbar = () => {
                 <div className='navlogo'>
                     <img src={logo} alt='Not loaded'/>
                 </div>
-                <div className="nav_Searchbar">
+                <div className="nav_searchbaar">
                   <input type= "text" name="" id="" />
                   <div className="search_icon">
                     <SearchIcon id='search`' />
