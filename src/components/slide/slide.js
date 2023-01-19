@@ -24,11 +24,11 @@ const responsive = {
     }
   };
 
-const Slide = () => {
+const Slide = ({title}) => {
   return (
     <div className='product_section'>
         <div className='product_deal'>
-          <h3> Deal Of The Day</h3>
+          <h3> {title} </h3>
           <button className='view_btn'> View All</button>
         </div>
 

@@ -3,6 +3,7 @@ import MainComponent from './components/MainComponent/MainComponent';
 // components
 import Navbar from './components/Navbar/Navbar';
 import SubNav from './components/subNav/SubNav';
+import Footer from './components/MainComponent/footer/Footer';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <Navbar/>
     <SubNav/>
     <MainComponent/>
+    <Footer />
     </>);
 }
 
