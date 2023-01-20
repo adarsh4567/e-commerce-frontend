@@ -13,7 +13,7 @@ const MainComponent = () => {
         </div>
         <div className="slide_part">
           <div className="left_slide">
-            <Slide title="Deal Of The Day"/>
+            <Slide isFirstSlide={true} title="Deal Of The Day"/>
           </div>
           <div className="right_slide">
             <h4>Festival Latest Launch</h4>

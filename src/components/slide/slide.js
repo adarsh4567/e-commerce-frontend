@@ -24,7 +24,7 @@ const responsive = {
     }
   };
 
-const Slide = ({title}) => {
+const Slide = ({title,isFirstSlide}) => {
   return (
     <div className='product_section'>
         <div className='product_deal'>
@@ -38,7 +38,10 @@ const Slide = ({title}) => {
         swipeable={true}
         draggable={false}
         showDots={false}
-        responsive={responsive}
+        responsive={isFirstSlide ? {desktop:{
+          breakpoint: { max: 3000, min: 1024 },
+          items: 3
+        }}:responsive}
         infinite={true}
         autoPlay={true}
         autoPlaySpeed={3000}
