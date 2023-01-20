@@ -2,7 +2,7 @@ import { Divider } from '@mui/material';
 import React from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { products } from "../ProductDetail/ProductDetail";
+import { products } from '../../helper/dummy_data';
 import './slide.css'
 
 const responsive = {
@@ -12,7 +12,7 @@ const responsive = {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3
+      items: 4
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -45,7 +45,7 @@ const Slide = ({title}) => {
         keyBoardControl={true}
         removeArrowOnDeviceType={["tablet", "mobile"]}
         dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-40-px"
+        itemClass="carousel-item-padding-30-px"
         containerClass="carousel-container"
         >
            {

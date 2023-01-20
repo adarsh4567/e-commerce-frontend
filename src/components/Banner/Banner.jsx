@@ -3,15 +3,15 @@ import Carousel from 'react-material-ui-carousel'
 import { bannerImages } from '../../helper/dummy_data'
 import './banner.css'
 
-const Banner = () => {
+const Banner = ({isSubBanner,subBannerImages}) => {
   return (
     <>
      <Carousel
      className='carasousel'
      autoPlay={true}
-     animation='slide'
-     indicators={false}
-     navButtonsAlwaysVisible={true}
+     animation={isSubBanner ? 'fade':'slide'}
+     indicators={isSubBanner ? true:false}
+     navButtonsAlwaysVisible={isSubBanner ? false:true}
      cycleNavigation={true}
      navButtonsProps={{
       style:{
@@ -20,7 +20,7 @@ const Banner = () => {
       }
      }}
      >
-      {bannerImages.map((pic,i)=>{
+      {(subBannerImages ? subBannerImages:bannerImages).map((pic,i)=>{
         return(
           <img key={i} src={pic} alt='img' className='banner_img'/>
         ) 
