@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from '../Banner/Banner'
 import './mainComponent.css'
 import Slide from '../slide/slide'
+import { SubBannerImages } from '../../helper/dummy_data'
 
 const MainComponent = () => {
   return (
@@ -12,17 +13,16 @@ const MainComponent = () => {
         </div>
         <div className="slide_part">
           <div className="left_slide">
-            <Slide title="Deal Of The Day"/>
+            <Slide isFirstSlide={true} title="Deal Of The Day"/>
           </div>
           <div className="right_slide">
             <h4>Festival Latest Launch</h4>
-            <img src='https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/Jupiter/Launches/T3/DesktopGateway_CategoryCard2x_758X608_T3._SY608_CB639883570_.jpg' alt='rightimg'></img>
-            <a href='#'>See More</a>
+            <img src='https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2R1Y3R8ZW58MHx8MHx8&w=1000&q=80' alt='rightimg'></img>
           </div>
         </div>
         <Slide title="Today's Deal" />
         <div className="center_img">
-          <img src="https://m.media-amazon.com/images/G/31/AMS/IN/970X250-_desktop_banner.jpg" alt=''></img>
+          <Banner subBannerImages={SubBannerImages} isSubBanner={true}/>
         </div>
         <Slide title="Best Seller" />
         <Slide title="Upto 80% off" />
