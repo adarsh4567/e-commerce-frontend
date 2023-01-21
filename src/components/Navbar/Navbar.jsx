@@ -6,8 +6,10 @@ import Badge from '@mui/material/Badge'
 import {ShoppingCart} from '@mui/icons-material';
 import { Button } from '@mui/material';
 import {AiOutlineSearch} from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <header>
         <nav>
@@ -24,7 +26,7 @@ const Navbar = () => {
             </div>
             <div className='right'>
               <div className='nav_btn'>
-                <Button variant='outline'>Sign In</Button>
+                <Button onClick={()=> navigate('/login')} variant='outline'>Sign In</Button>
               </div>
               <div className='cart_btn'>
                 <Badge badgeContent={4} color='primary'>

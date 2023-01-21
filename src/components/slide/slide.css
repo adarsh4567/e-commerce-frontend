@@ -33,7 +33,7 @@
     align-items: center;
     background-color: #FAC213;
     color: black;
-    margin-right:15px;
+    margin-right:3rem;
     font-size: large;
     word-spacing: 1px;
     text-shadow: 1px 1px 9px rgba(0,0,0,0.30);
@@ -47,9 +47,16 @@
 }
 
 .slide_part .right_slide img{
-    height:275px;
+    height:90%;
     width:100%;
-    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all .5s;
+    transform: translateY(-30px);
+}
+
+.slide_part .right_slide img:hover{
+    transform: translateY(30px);
 }
 
 .product_deal h3{
@@ -60,7 +67,7 @@
 }
 
 .view_btn{
-    margin: 15px 18px;
+    margin: 0px 18px;
     padding: 9px 8px;
     border: none;
     outline: none;
