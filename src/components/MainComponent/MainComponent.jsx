@@ -16,8 +16,9 @@ const MainComponent = () => {
             <Slide isFirstSlide={true} title="Deal Of The Day"/>
           </div>
           <div className="right_slide">
-            <h4>Festival Latest Launch</h4>
+          <h4>50-60% Off on Shoes</h4>
             <img src='https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2R1Y3R8ZW58MHx8MHx8&w=1000&q=80' alt='rightimg'></img>
+            <h4>Festival Latest Launch</h4>
           </div>
         </div>
         <Slide title="Today's Deal" />

@@ -1,125 +1,105 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Card } from '@mui/material';
+import React, { useState } from "react";
+import "./auth.css";
+import registerImg from '../../assets/register.svg'
+import loginImg from '../../assets/login.svg'
 
-function Copyright(props) {
+const Auth = () => {
+  const [isSignUp,setIsSignUp] = useState(false);
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-const theme = createTheme();
-
-export default function Auth() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
-
-  return (
-    <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '80vh',marginTop:'7rem' }}>
-        <CssBaseline />
-        <Grid item xs={12} sm={8} md={5}>
-          <Box
-            sx={{
-              my: 8,
-              mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-            <Avatar sx={{ m: 1, bgcolor: 'black' }}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
+    <div className={isSignUp ? "container sign-up-mode":"container"}>
+      <div className="forms-container">
+        <div className="signin-signup">
+          <form action="#" className="sign-in-form">
+            <h2 className="title">Sign in</h2>
+            <div className="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div className="input-field">
+              <i className="fas fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <input onClick={(e)=>{
+              e.preventDefault();
+              setIsSignUp(!isSignUp);
+            }} type="submit" value="Login" className="btn solid" />
+            <p className="social-text">Or Sign in with social platforms</p>
+            <div className="social-media">
+              <a  class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a  class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a  class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </form>
+          <form action="#" className="sign-up-form">
+            <h2 className="title">Sign up</h2>
+            <div className="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div className="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div className="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" className="btn" value="Sign up" />
+            <p className="social-text">Or Sign up with social platforms</p>
+            <div className="social-media">
+              <a  class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a  class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a  class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a  class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div className="panels-container">
+        <div class="panel left-panel">
+          <div className="content">
+            <h3>New here ?</h3>
+            <p>
+              Register with us to continue your shopping...
+            </p>
+            <button onClick={()=> setIsSignUp(!isSignUp)} className="btn transparent secondary-btn" id="sign-up-btn">
+              Sign up
+            </button>
+          </div>
+          <img src={loginImg} className="image" alt="" />
+        </div>
+        <div className="panel right-panel">
+          <div className="content">
+            <h3>One of us ?</h3>
+            <p>
+              Login to your Account to enjoy better experience...
+            </p>
+            <button onClick={()=> setIsSignUp(!isSignUp)} className="btn transparent secondary-btn" id="sign-in-btn">
               Sign in
-            </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Sign In
-              </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
-              </Grid>
-              <Copyright sx={{ mt: 5 }} />
-            </Box>
-          </Box>
-        </Grid>
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          sx={{
-            backgroundImage: 'url(https://img.freepik.com/free-vector/two-factor-authentication-concept-illustration_114360-5598.jpg?w=740&t=st=1674252567~exp=1674253167~hmac=7fc08ebea73f6e731439d8df6f9d43e65c938b4a19769413c075971544c8312b)',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-          }}
-        />
-      </Grid>
-    </ThemeProvider>
+            </button>
+          </div>
+          <img src={registerImg} className="image" alt="" />
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default Auth;
