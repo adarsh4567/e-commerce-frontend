@@ -48,7 +48,7 @@ const Slide = ({title,isFirstSlide}) => {
         keyBoardControl={true}
         removeArrowOnDeviceType={["tablet", "mobile"]}
         dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-30-px"
+        itemClass="carousel-item"
         containerClass="carousel-container"
         >
            {

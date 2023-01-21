@@ -9,6 +9,9 @@ body {
   overflow-x: hidden;
   background-color: #F6FBF4;
 }
+body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

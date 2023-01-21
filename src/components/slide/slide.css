@@ -1,12 +1,25 @@
 .product_deal{
     display: flex;
     justify-content: flex-start;
+    margin: 1rem;
+    z-index: 2;
 
 }
-
+.carousel-container{
+   padding: 20px;
+}
+.carousel-item{
+    padding: 10px;
+    transition:  all .5s;
+}
+.carousel-item:hover{
+    transform: scale(1.1);
+    z-index: 10;
+    color: black;
+}
 .product_section{
     padding: 10px 20px;
-    width: 98%;
+    width: 98%; 
     margin:10px 10px;
     background-color: white;
     border-radius: 4px;
@@ -33,7 +46,7 @@
     align-items: center;
     background-color: #FAC213;
     color: black;
-    margin-right:15px;
+    margin-right:3rem;
     font-size: large;
     word-spacing: 1px;
     text-shadow: 1px 1px 9px rgba(0,0,0,0.30);
@@ -47,9 +60,16 @@
 }
 
 .slide_part .right_slide img{
-    height:275px;
+    height:90%;
     width:100%;
-    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all .5s;
+    transform: translateY(-30px);
+}
+
+.slide_part .right_slide img:hover{
+    transform: translateY(30px);
 }
 
 .product_deal h3{
@@ -60,7 +80,7 @@
 }
 
 .view_btn{
-    margin: 15px 18px;
+    margin: 0px 18px;
     padding: 9px 8px;
     border: none;
     outline: none;
@@ -83,16 +103,19 @@
     width: 150px;
     height: 150px;
     margin-top: 4px;
+    
 }
 
-.product_section .product_items{
+ .product_items{
     margin-top: 10px;
-    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
 }
+.product_section .product_items:hover{
+    font-weight: 600;
+ }
 
 .product_section .product_items p{
     font-size: 14px;
