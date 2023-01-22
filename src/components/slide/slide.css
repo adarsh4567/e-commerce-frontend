@@ -1,12 +1,25 @@
 .product_deal{
     display: flex;
     justify-content: flex-start;
+    margin: 1rem;
+    z-index: 2;
 
 }
-
+.carousel-container{
+   padding: 20px;
+}
+.carousel-item{
+    padding: 10px;
+    transition:  all .5s;
+}
+.carousel-item:hover{
+    transform: scale(1.1);
+    z-index: 10;
+    color: black;
+}
 .product_section{
     padding: 10px 20px;
-    width: 98%;
+    width: 98%; 
     margin:10px 10px;
     background-color: white;
     border-radius: 4px;
@@ -90,16 +103,19 @@
     width: 150px;
     height: 150px;
     margin-top: 4px;
+    
 }
 
-.product_section .product_items{
+ .product_items{
     margin-top: 10px;
-    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
 }
+.product_section .product_items:hover{
+    font-weight: 600;
+ }
 
 .product_section .product_items p{
     font-size: 14px;
