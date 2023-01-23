@@ -15,7 +15,7 @@ export const SignInPanel = ({isSignUp, setIsSignUp}) => {
         <p>Register with us to continue your shopping...</p>
         <button
           onClick={() => setIsSignUp(!isSignUp)}
-          className="btn transparent secondary-btn"
+          className="btn"
           id="sign-up-btn"
         >
           Sign up
@@ -34,7 +34,7 @@ export const SignUpPanel = ({isSignUp, setIsSignUp}) => {
         <p>Login to your Account to enjoy better experience...</p>
         <button
           onClick={() => setIsSignUp(!isSignUp)}
-          className="btn transparent secondary-btn"
+          className="btn"
           id="sign-in-btn"
         >
           Sign in
@@ -49,12 +49,21 @@ export const SignUpPanel = ({isSignUp, setIsSignUp}) => {
 
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
+  const [signInData,setSignInData] = useState({
+    username:"",
+    password:""
+  })
+  const [signUpData,setSignUpData] = useState({
+    username:"",
+    email:"",
+    password:""
+  })
   return (
     <div className={isSignUp ? "container sign-up-mode" : "container"}>
       <div className="forms-container">
         <div className="signin-signup">
-          <SignInForm />
-          <SignUpForm />
+          <SignInForm signInData={signInData} setSignInData={setSignInData} />
+          <SignUpForm signUpData={signUpData} setSignUpData={setSignUpData}/>
         </div>
       </div>
       <div className="panels-container">

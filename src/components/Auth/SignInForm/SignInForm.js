@@ -1,17 +1,26 @@
 import React from 'react'
 import { SocialIcons } from '../SocialIcons';
 
-export const SignInForm = () => {
+export const SignInForm = ({signInData,setSignInData}) => {
+  const handleSignIn = (e)=>{
+     const {name,value} = e.target;
+     setSignInData(()=>{
+      return {
+        ...signInData,
+        [name]:value
+      }
+     })
+  }
     return (
       <form action="#" className="sign-in-form">
         <h2 className="title">Sign in</h2>
         <div className="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Username" />
+          <input value={signInData.username} onChange={handleSignIn} name='username' type="text" placeholder="Username" />
         </div>
         <div className="input-field">
           <i className="fas fa-lock"></i>
-          <input type="password" placeholder="Password" />
+          <input value={signInData.password} onChange={handleSignIn} name='password' type="password" placeholder="Password" />
         </div>
         <input
           type="submit"
