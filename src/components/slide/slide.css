@@ -16,7 +16,6 @@
 .carousel-item:hover{
     transform: scale(1.1);
     z-index: 10;
-    color: black;
 }
 .product_section{
     padding: 10px 20px;
@@ -38,8 +37,8 @@
 }
 
 .slide_part .right_slide{
-    width: 25%;
-    height:340px;
+    width: 30%;
+    height:400px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -47,11 +46,14 @@
     align-items: center;
     background-color: #FAC213;
     color: black;
-    margin-right:3rem;
-    font-size: large;
-    word-spacing: 1px;
-    text-shadow: 1px 1px 9px rgba(0,0,0,0.30);
+    margin-left: 1rem;
+    margin-right: 1rem;
     box-shadow: 0px 4px 18px -5px rgba(0,0,0,0.55);
+}
+
+.slide_part .right_slide h4{
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 9px rgba(0,0,0,0.30);
 }
 
 .slide_part .right_slide a{
@@ -120,7 +122,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0.2);
+	background: rgba(234,240,240,.1);
 	color: #ffffff;
 	font-family: 'Quicksand', sans-serif;
 	display: flex;
@@ -133,7 +135,7 @@
 }
 
 .image__overlay--blur {
-	backdrop-filter: blur(5px);
+	backdrop-filter: blur(3px);
 }
 
 
@@ -156,14 +158,15 @@
     place-items: center;
     width: 7rem;
     height: 3rem;
-    border: 1px solid white;
+    border: 1px solid black;
     border-radius: 40px;
-	font-weight: bold;
+    color: black;
     transition: all .3s;
 }
 
 .image__title:hover{
     background: white;
+    border: none;
     color: black;
 }
 
