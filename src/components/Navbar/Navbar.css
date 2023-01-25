@@ -13,7 +13,7 @@ header nav{
     margin: auto;
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     z-index: 4;
 }
@@ -21,14 +21,14 @@ header nav{
 header nav .navlogo img{
     background: transparent;
     width: 170px;
+    margin-left: 7rem;
 }
 
 header nav .left{
     display: flex;
-    justify-content:space-around;
+    justify-content:space-evenly;
     align-items: center;
     /* border: 2px solid red; */
-    flex: .7;
 }
 
 
@@ -63,12 +63,46 @@ header nav .left .search_icon:hover{
     transition: all .5s;
 }
 
-header nav .nav_searchbaar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.box{
+    position: relative;
 }
-
+.box .input {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: white;
+    outline: none;
+    border: 1px solid white;
+    transition: .5s;
+}
+.box input::placeholder{
+   opacity: 0;
+}
+.box:hover input::placeholder{
+    opacity: 1;
+}
+.box:hover input{
+    border: 1px solid white;
+    width: 350px;
+    background: rgb(0, 0, 0);
+    border-radius: 10px;
+}
+.box #one{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(30%,-50%);
+    font-size: 20px;
+    color: white;
+    transition: .2s;
+}
+.box:hover #one{
+    opacity: 1;
+}
 /* header nav .left input:focus{
     border: 2px solid #febd69;
 } */
@@ -77,8 +111,8 @@ header nav .right{
     display: flex;
     justify-content:center;
     align-items: center;
+    margin-right: 2rem;
     /* border: 2px solid red; */
-    flex: .3;
 }
 
 header nav .right .nav_btn {

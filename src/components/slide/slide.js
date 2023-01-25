@@ -50,7 +50,7 @@ const Slide = ({ title, isFirstSlide }) => {
         }
         infinite={true}
         autoPlay={true}
-        autoPlaySpeed={3000}
+        autoPlaySpeed={4000}
         keyBoardControl={true}
         removeArrowOnDeviceType={["tablet", "mobile"]}
         dotListClass="custom-dot-list-style"
