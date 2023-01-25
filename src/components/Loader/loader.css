@@ -1,12 +1,31 @@
 :root {
     --background: #121621;
+    transition: all ease-out 1s;
+    
+   
   }
   .main{
     width: 100vw;
+    z-index: 100;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation-name: fade;
+    animation-duration: 5s;
+    animation-delay: 5s;
+    background-color: var(--background);
+  }
+  @keyframes fade {
+    0%{
+      opacity: 1;
+    }
+    50%{
+       opacity: 0.5;
+    }
+    100%{
+      opacity: 0;
+    }
   }
   .loader {
     --duration: 3s;
@@ -645,9 +664,6 @@
     66%, 100% {
       opacity: 1;
     }
-  }
-  body {
-    background: var(--background);
   }
   
   small {
