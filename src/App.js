@@ -6,17 +6,28 @@ import SubNav from './components/subNav/SubNav';
 import Footer from './components/Footer/Footer';
 import { Routes,Route } from 'react-router-dom';
 import Auth from './components/Auth/Auth';
+import { Loader } from './components/Loader/Loader';
+import { useEffect, useState } from 'react';
 
 
 function App() {
+  const [loading,setLoading]=useState(true)
+  useEffect(()=>{
+     setTimeout(() => {
+       setLoading(false)
+     }, 8000);
+  },[])
   return (<>
-    <Navbar/>
+    {!loading ? (<>
+      <Navbar/>
     <SubNav/>
     <Routes>
       <Route path='/' element={<MainComponent/>}/>
       <Route path='/login' element={<Auth/>}/>
     </Routes>
     <Footer />
+    </>):(<Loader/>)
+    }
     </>);
 }
 
