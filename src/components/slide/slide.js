@@ -66,7 +66,7 @@ const Slide = ({ title, isFirstSlide }) => {
               <p className="product_name">{e.title.shortTitle}</p>
               <p className="product_offer">{e.discount}</p>
               <p className="product_explore">{e.tagline}</p>
-              <div class="image__overlay image__overlay--blur">
+              <div class="image__overlay">
                 <div class="image__title">View</div>
               </div>
             </div>

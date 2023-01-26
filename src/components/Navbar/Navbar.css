@@ -68,27 +68,30 @@ header nav .left .search_icon:hover{
 }
 .box .input {
     padding: 10px;
-    width: 40px;
+    width: 300px;
     height: 40px;
     background: none;
     border-radius: 50px;
     box-sizing: border-box;
     font-size: 15px;
-    color: white;
     outline: none;
+    color: black;
     border: 1px solid white;
     transition: .5s;
 }
+
 .box input::placeholder{
-   opacity: 0;
+   opacity: 1;
+   color: white;
 }
 .box:hover input::placeholder{
     opacity: 1;
+    color: #000;
 }
 .box:hover input{
     border: 1px solid white;
-    width: 350px;
-    background: rgb(0, 0, 0);
+    width: 400px;
+    background: rgb(255, 255, 255);
     border-radius: 10px;
 }
 .box #one{
@@ -102,6 +105,7 @@ header nav .left .search_icon:hover{
 }
 .box:hover #one{
     opacity: 1;
+    color: black;
 }
 /* header nav .left input:focus{
     border: 2px solid #febd69;
