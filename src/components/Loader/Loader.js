@@ -33,6 +33,7 @@ export const Loader = () => {
           <div></div>
         </div>
       </div>
+      <div style={{color:'white',fontSize:'20px',marginTop:'4rem'}}>Setting up your store...</div>
     </div>
   );
 };

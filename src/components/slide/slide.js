@@ -33,7 +33,7 @@ const Slide = ({ title, isFirstSlide }) => {
       </div>
 
       <Divider />
-
+    <div className="carousel-content">
       <Carousel
         swipeable={true}
         draggable={false}
@@ -73,6 +73,7 @@ const Slide = ({ title, isFirstSlide }) => {
           );
         })}
       </Carousel>
+      </div>
     </div>
   );
 };
