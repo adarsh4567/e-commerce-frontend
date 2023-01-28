@@ -476,7 +476,7 @@ main {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 100;
   transform-style: preserve-3d;
   pointer-events: none;
 }
@@ -484,8 +484,8 @@ main {
 .shoe-img {
   position: absolute;
   width: 130%;
-  top: 50%;
-  left: 50%;
+  top: 30%;
+  left: 0%;
   transform: translate(-45%, -55%) translateZ(200px);
   transform-style: preserve-3d;
   filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.2));
@@ -512,7 +512,7 @@ main {
 
 .content:hover .shoe-img {
   width: 115%;
-  top: 67%;
+  top: 40%;
 }
 
 .content:hover .shoe {

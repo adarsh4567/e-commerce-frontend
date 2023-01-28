@@ -7,7 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background-color: #F6FBF4;
+  background-color: white;
 }
 body::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
