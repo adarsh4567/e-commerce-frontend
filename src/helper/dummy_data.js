@@ -1,7 +1,4 @@
-import bannerOne from '../assets/banner-1.jpg'
-import bannerTwo from '../assets/banner-2.jpg'
-import bannerThree from '../assets/banner-3.jpg'
-import bannerFour from '../assets/banner-4.jpg'
+
 export const subNavData = [
   "All",
   "Mobile",
@@ -12,17 +9,11 @@ export const subNavData = [
   "Special Collection",
 ];
 export const bannerImages = [
-  bannerOne,
-  bannerTwo,
-  bannerThree,
-  bannerFour,
+  "https://cdn.shopify.com/s/files/1/0997/6284/files/image_2023_01_21T06_00_18_947Z_1900x.png?v=1674282274",
+  "https://cdn.shopify.com/s/files/1/0997/6284/files/image_2023_01_25T07_16_30_658Z_1_1_1_1_1_1_1900x.png?v=1674757219",
+  "https://cdn.shopify.com/s/files/1/0997/6284/files/Top_banner-Desktop__2_1_1900x.png?v=1674795010",
+  "https://cdn.shopify.com/s/files/1/0997/6284/files/image_2023_01_17T11_54_58_066Z_1_1_1900x.png?v=1673957709",
 ];
-export const SubBannerImages = [
-  "https://www.onlinecarstereo.com/images/LandingPages/Hero-banner-car-speakers.jpg",
-  "https://www.onlinecarstereo.com/images/LandingPages/Hero-banner-multimedia-accesories.jpg",
-  "https://www.onlinecarstereo.com/images/LandingPages/wheels-and-tires-hero-banner.jpg"
-
-]
 export const products = [
   { 
       id: 'product1',
