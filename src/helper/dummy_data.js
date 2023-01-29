@@ -2,7 +2,7 @@
 export const bannerImages = [
   "https://cdn.shopify.com/s/files/1/0997/6284/files/image_2023_01_21T06_00_18_947Z_1900x.png?v=1674282274",
   "https://cdn.shopify.com/s/files/1/0997/6284/files/image_2023_01_25T07_16_30_658Z_1_1_1_1_1_1_1900x.png?v=1674757219",
-  "https://cdn.shopify.com/s/files/1/0997/6284/files/Top_banner-Desktop__2_1_1900x.png?v=1674795010",
+  "https://cdn.shopify.com/s/files/1/0997/6284/files/image_2023_01_25T08_11_22_394Z_1_1900x.png?v=1674639359",
   "https://cdn.shopify.com/s/files/1/0997/6284/files/image_2023_01_17T11_54_58_066Z_1_1_1900x.png?v=1673957709",
 ];
 export const products = [
