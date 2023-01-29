@@ -49,21 +49,12 @@ export const SignUpPanel = ({isSignUp, setIsSignUp}) => {
 
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
-  const [signInData,setSignInData] = useState({
-    username:"",
-    password:""
-  })
-  const [signUpData,setSignUpData] = useState({
-    username:"",
-    email:"",
-    password:""
-  })
   return (
     <div className={isSignUp ? "container sign-up-mode" : "container"}>
       <div className="forms-container">
         <div className="signin-signup">
-          <SignInForm signInData={signInData} setSignInData={setSignInData} />
-          <SignUpForm signUpData={signUpData} setSignUpData={setSignUpData}/>
+          <SignInForm />
+          <SignUpForm />
         </div>
       </div>
       <div className="panels-container">
