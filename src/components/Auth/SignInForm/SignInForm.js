@@ -1,34 +1,42 @@
-import React from 'react'
-import { SocialIcons } from '../SocialIcons';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { SocialIcons } from "../SocialIcons";
+import { setSignData,userDetailState } from "../../../features/authSlice";
 
-export const SignInForm = ({signInData,setSignInData}) => {
-  const handleSignIn = (e)=>{
-     const {name,value} = e.target;
-     setSignInData(()=>{
-      return {
-        ...signInData,
-        [name]:value
-      }
-     })
-  }
-    return (
-      <form action="#" className="sign-in-form">
-        <h2 className="title">Sign in</h2>
-        <div className="input-field">
-          <i class="fas fa-user"></i>
-          <input value={signInData.username} onChange={handleSignIn} name='username' type="text" placeholder="Username" />
-        </div>
-        <div className="input-field">
-          <i className="fas fa-lock"></i>
-          <input value={signInData.password} onChange={handleSignIn} name='password' type="password" placeholder="Password" />
-        </div>
+export const SignInForm = () => {
+  const username = useSelector(userDetailState);
+  const password = useSelector(userDetailState);
+  const dispatch = useDispatch();
+  return (
+    <form action="#" className="sign-in-form">
+      <h2 className="title">Sign in</h2>
+      <div className="input-field">
+        <i class="fas fa-user"></i>
         <input
-          type="submit"
-          value="Login"
-          className="btn solid"
+          name="username"
+          value={username}
+          onChange={(e) =>
+            dispatch(setSignData({ username: e.target.value }))
+          }
+          type="text"
+          placeholder="Username"
         />
-        <p className="social-text">Or Sign in with social platforms</p>
-         <SocialIcons/>
-      </form>
-    );
-  };
+      </div>
+      <div className="input-field">
+        <i className="fas fa-lock"></i>
+        <input
+          name="password"
+          onChange={(e) =>
+            dispatch(setSignData({ password: e.target.value }))
+          }
+          value={password}
+          type="password"
+          placeholder="Password"
+        />
+      </div>
+      <input type="submit" value="Login" className="btn solid" />
+      <p className="social-text">Or Sign in with social platforms</p>
+      <SocialIcons />
+    </form>
+  );
+};
