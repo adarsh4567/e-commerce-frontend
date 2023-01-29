@@ -1,4 +1,4 @@
-import { Divider } from "@mui/material";
+
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -31,8 +31,7 @@ const Slide = ({ title, isFirstSlide }) => {
         <h3> {title} </h3>
         <button className="view_btn"> View All</button>
       </div>
-
-      <Divider />
+      <hr style={{color:'black'}}/>
     <div className="carousel-content">
       <Carousel
         swipeable={true}
@@ -66,9 +65,6 @@ const Slide = ({ title, isFirstSlide }) => {
               <p className="product_name">{e.title.shortTitle}</p>
               <p className="product_offer">{e.discount}</p>
               <p className="product_explore">{e.tagline}</p>
-              <div class="image__overlay">
-                <div class="image__title">View</div>
-              </div>
             </div>
           );
         })}

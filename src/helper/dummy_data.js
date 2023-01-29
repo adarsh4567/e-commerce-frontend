@@ -1,13 +1,4 @@
 
-export const subNavData = [
-  "All",
-  "Mobile",
-  "Bestseller",
-  "Fashion",
-  "Customer services",
-  "Electronics",
-  "Special Collection",
-];
 export const bannerImages = [
   "https://cdn.shopify.com/s/files/1/0997/6284/files/image_2023_01_21T06_00_18_947Z_1900x.png?v=1674282274",
   "https://cdn.shopify.com/s/files/1/0997/6284/files/image_2023_01_25T07_16_30_658Z_1_1_1_1_1_1_1900x.png?v=1674757219",
