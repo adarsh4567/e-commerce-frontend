@@ -1,11 +1,10 @@
 .product_deal{
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     margin: 1rem;
     z-index: 2;
-    padding-left: 20px;
-    padding-top: 20px;
-    width: 100%;
+    padding-left:10px;
 
 }
 .carousel-container{
@@ -27,8 +26,8 @@
 
 }
 .product_section{
-    width: 100%;
     box-shadow: 0px 4px 18px -5px rgba(0,0,0,0.55);
+    width: 100%;
 }
 
 .home_section .slide_part{
@@ -85,8 +84,7 @@
 .product_deal h3{
     color: black;
     font-weight: 700;
-    font-size: 40px;
-    
+    font-size: 30px;
     text-shadow: 3px 2px 3px rgba(206,206,206,0.44);
     font-family: "Prata", serif;
 }
