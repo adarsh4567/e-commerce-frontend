@@ -94,22 +94,7 @@ const MainComponent = () => {
             </div>
           </main>
         </div>
-        <div className="slide_part">
-          <div className="left_slide">
-            <Slide isFirstSlide={true} title="Deal Of The Day" />
-          </div>
-          <div className="right_slide">
-            <h4>50% Off on Headphones</h4>
-            <img
-              src="https://images.philips.com/is/image/PhilipsConsumer/TASH402BL_00-IMS-en_GH?$jpglarge$&wid=960"
-              alt="rightimg"
-            ></img>
-          </div>
-        </div>
         <Slide title="Today's Deal" />
-        <div className="center_img">
-          {/* <Banner subBannerImages={SubBannerImages} isSubBanner={true} /> */}
-        </div>
         <Slide title="Best Seller" />
         <Slide title="Upto 80% off" />
       </div>
