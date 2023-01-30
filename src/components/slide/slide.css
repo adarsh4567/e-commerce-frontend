@@ -4,7 +4,6 @@
     align-items: center;
     margin: 1rem;
     z-index: 2;
-    padding-left:10px;
 
 }
 .carousel-container{
@@ -26,8 +25,10 @@
 
 }
 .product_section{
-    box-shadow: 0px 4px 18px -5px rgba(0,0,0,0.55);
-    width: 100%;
+    width: 98%;
+    border-radius: 20px;
+    box-shadow: 0px 4px 18px -5px rgba(0,0,0,0.2);
+    margin-left: 1rem;
 }
 
 .home_section .slide_part{
@@ -56,7 +57,11 @@
 .slide_part .right_slide h4{
     font-family: "Prata", serif;
     font-size: 2rem;
-    text-shadow: 1px 1px 9px rgba(0,0,0,0.30);
+    font-weight: 700;
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+    background: black;
 }
 
 .slide_part .right_slide a{
@@ -67,7 +72,7 @@
 
 .slide_part .right_slide img{
     height:90%;
-    width:100%;
+    width:90%;
     cursor: pointer;
     border-radius: 20px;
     animation: float 3s linear infinite;
@@ -75,46 +80,30 @@
 
 @keyframes float{
     0%, 100%{
-        transform: translateY(0rem);
+        transform: translateY(-2rem);
     }
     50%{
-        transform: translateY(2rem);
+        transform: translateY(1rem);
     }
 }
-.product_deal h3{
+.product_deal .title{
     color: black;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 40px;
+    padding-top: 25px;
+    padding-left: 20px;
     text-shadow: 3px 2px 3px rgba(206,206,206,0.44);
     font-family: "Prata", serif;
 }
 
-.view_btn{
-    margin: 5px 18px;
-    padding: 5px;
-    color: black;
-    background: transparent;
-    width: 80px;
-    height: 40px;
-    border: none;
-    font-size: 15px;
-    cursor: pointer;
-    font-weight: 500;
-}
-.view_btn:hover{
-    border-bottom: 3px solid black;
-}
-
 
 .product_section .product_items img{
-    width: 150px;
-    height: 150px;
-    margin-top: 4px;
+    width: 175px;
+    height: 200px;
     
 }
 
  .product_items{
-    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;

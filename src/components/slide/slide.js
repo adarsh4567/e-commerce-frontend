@@ -29,8 +29,7 @@ const Slide = ({ title, isFirstSlide }) => {
   return (
     <div className="product_section">
       <div className="product_deal">
-        <h3> {title} </h3>
-        <button className="view_btn"> View All</button>
+        <div className="title"> {title} </div>
       </div>
       <Divider/>
     <div className="carousel-content">
