@@ -1,34 +1,47 @@
-header{
-    background-color: black;
+.navbar{
+    background-color: transparent;
     width:100%;
     height: 80px;
     position: fixed;
     top: 0;
+    box-shadow: 0px 4px 18px -5px rgba(0,0,0,0.55);
     z-index:2;
+    transition: all .5s;
     width: 100%;
 }
-
+.hideNav{
+    background-color: transparent;
+    width:100%;
+    height: 80px;
+    position: fixed;
+    top: -80px;
+    box-shadow: 0px 4px 18px -5px rgba(0,0,0,0.55);
+    z-index:2;
+   transition: all .5s;
+    width: 100%;
+}
 header nav{
     width: 100%;
     margin: auto;
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     z-index: 4;
 }
 
-header nav .navlogo img{
-    background: transparent;
-    width: 170px;
+header nav .navlogo {
+    font-size: 2rem;
+    color: white;
+    font-weight: 600;
+    margin-left: 5rem;
 }
 
 header nav .left{
     display: flex;
-    justify-content:space-around;
+    justify-content:space-evenly;
     align-items: center;
     /* border: 2px solid red; */
-    flex: .7;
 }
 
 
@@ -63,12 +76,50 @@ header nav .left .search_icon:hover{
     transition: all .5s;
 }
 
-header nav .nav_searchbaar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.box{
+    position: relative;
+}
+.box .input {
+    padding: 10px;
+    width: 300px;
+    height: 40px;
+    background: none;
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 15px;
+    outline: none;
+    color: black;
+    border: 1px solid white;
+    transition: .5s;
 }
 
+.box input::placeholder{
+   opacity: 1;
+   color: white;
+}
+.box:hover input::placeholder{
+    opacity: 1;
+    color: #000;
+}
+.box:hover input{
+    border: 1px solid white;
+    width: 400px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.box #one{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(30%,-50%);
+    font-size: 20px;
+    color: white;
+    transition: .2s;
+}
+.box:hover #one{
+    opacity: 1;
+    color: black;
+}
 /* header nav .left input:focus{
     border: 2px solid #febd69;
 } */
@@ -77,8 +128,8 @@ header nav .right{
     display: flex;
     justify-content:center;
     align-items: center;
+    margin-right: 2rem;
     /* border: 2px solid red; */
-    flex: .3;
 }
 
 header nav .right .nav_btn {
@@ -86,14 +137,12 @@ header nav .right .nav_btn {
     font-weight: 500;
     text-decoration: none;
     margin-right: 2px;
+    transition: all .5s;
     /* padding: 8px; */
 }
 
-
-
 header nav .right .nav_btn :hover{
-    background-color: white;
-    color: black;
+    border-bottom: 2px solid white;
 }
 
 header nav .right .cart_btn{

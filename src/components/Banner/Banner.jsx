@@ -8,17 +8,12 @@ const Banner = ({isSubBanner,subBannerImages}) => {
     <>
      <Carousel
      className='carasousel'
+     duration={1000}
      autoPlay={true}
-     animation={isSubBanner ? 'fade':'slide'}
+     animation='fade'
      indicators={isSubBanner ? true:false}
-     navButtonsAlwaysVisible={isSubBanner ? false:true}
+     navButtonsAlwaysVisible={false}
      cycleNavigation={true}
-     navButtonsProps={{
-      style:{
-        background:'rgba(255, 255, 255,0.9)',
-        color:'black'
-      }
-     }}
      >
       {(subBannerImages ? subBannerImages:bannerImages).map((pic,i)=>{
         return(

@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body,
 input {
@@ -16,7 +11,6 @@ input {
   width: 100%;
   background-color: #fff;
   min-height: 100vh;
-  margin-top: -3.1rem;
   overflow: hidden;
   z-index: 10;
   transition: all .5s;
@@ -185,6 +179,7 @@ form.sign-in-form {
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
+
 }
 
 .image {

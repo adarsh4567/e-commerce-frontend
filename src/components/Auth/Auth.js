@@ -15,7 +15,7 @@ export const SignInPanel = ({isSignUp, setIsSignUp}) => {
         <p>Register with us to continue your shopping...</p>
         <button
           onClick={() => setIsSignUp(!isSignUp)}
-          className="btn transparent secondary-btn"
+          className="btn"
           id="sign-up-btn"
         >
           Sign up
@@ -34,7 +34,7 @@ export const SignUpPanel = ({isSignUp, setIsSignUp}) => {
         <p>Login to your Account to enjoy better experience...</p>
         <button
           onClick={() => setIsSignUp(!isSignUp)}
-          className="btn transparent secondary-btn"
+          className="btn"
           id="sign-in-btn"
         >
           Sign in
