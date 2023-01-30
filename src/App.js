@@ -6,6 +6,7 @@ import SubNav from './components/subNav/SubNav';
 import Footer from './components/Footer/Footer';
 import { Routes,Route } from 'react-router-dom';
 import Auth from './components/Auth/Auth';
+import Cart from './components/Cart/Cart';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <Routes>
       <Route path='/' element={<MainComponent/>}/>
       <Route path='/login' element={<Auth/>}/>
+      <Route path='/getproductone/id' element={<Cart/>}/>
     </Routes>
     <Footer />
     </>);
