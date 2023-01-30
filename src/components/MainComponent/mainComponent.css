@@ -14,7 +14,7 @@ button {
 }
 
 img {
-  width: 100%;
+  width: 90%;
 }
 
 a {
@@ -86,14 +86,13 @@ main {
   h1 {
     color: white;
     font-family: "Playfair Display", Vidaloka, serif;
-    font-size: 8rem;
+    font-size: 7rem;
     line-height:1;
     perspective: 500px;
   }
   
   .word {
     display: block;
-  
     animation: show 0.01s forwards, pop-word 1.5s forwards;
     animation-timing-function: cubic-bezier(0.14, 1.23, 0.33, 1.16);
     opacity: 0;
@@ -495,12 +494,12 @@ main {
 
 @keyframes float {
   0% {
-    transform: translateX(calc(-45% - 5px)) translateY(calc(-55% - 5px))
+    transform: translateX(calc(-45% - 5px)) translateY(calc(-50%))
       translateZ(200px);
   }
 
   100% {
-    transform: translateX(calc(-45% + 5px)) translateY(calc(-55% + 5px))
+    transform: translateX(calc(-45% + 5px)) translateY(calc(-50%))
       translateZ(400px);
   }
 }
@@ -512,11 +511,11 @@ main {
 
 .content:hover .shoe-img {
   width: 115%;
-  top: 40%;
+  top: 50%;
 }
 
 .content:hover .shoe {
-  transform: rotate(-17deg);
+  transform: rotate(-10deg);
 }
 
 @media (max-width: 550px) {
