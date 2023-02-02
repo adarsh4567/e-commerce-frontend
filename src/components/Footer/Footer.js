@@ -39,7 +39,7 @@ const Footer = () => {
       </div>
       <div className="lastdetails">
                <p>eTown</p>
-                <p>Conditions of Use & Sale &nbsp; &nbsp;&nbsp;  Privacy Notice  &nbsp; &nbsp;&nbsp; Interest-Based Ads  &nbsp; &nbsp;&nbsp;  © 1996-{year}, Amazon.com, Inc. or its affiliates</p>
+                <p>Conditions of Use & Sale &nbsp; &nbsp;&nbsp;  Privacy Notice  &nbsp; &nbsp;&nbsp; Interest-Based Ads  &nbsp; &nbsp;&nbsp;  © 1996-{year}, e-town.vercel.app, Inc. or its affiliates</p>
             </div>
     </footer>
   )
