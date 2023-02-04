@@ -4,8 +4,11 @@ import MainComponent from './components/MainComponent/MainComponent';
 import Footer from './components/Footer/Footer';
 import { Routes,Route } from 'react-router-dom';
 import Auth from './components/Auth/Auth';
-import { Loader } from './components/Loader/Loader';
+import Cart from './components/Cart/Cart';
+import Buynow from './components/BuyNow/Buynow';
 import { useEffect, useState } from 'react';
+import { Loader } from './components/Loader/Loader';
+
 
 
 function App() {
@@ -20,6 +23,8 @@ function App() {
     <Routes>
       <Route path='/' element={<MainComponent/>}/>
       <Route path='/login' element={<Auth/>}/>
+      <Route path='/getproductsone/:id' element={<Cart/>}/>
+      <Route path='/buynow' element={<Buynow/>}/>
     </Routes>
     <Footer />
     </>):(<Loader/>)
