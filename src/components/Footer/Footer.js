@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Footer.css"
-import logo from '../../assets/logo-3.png'
+
 
 const Footer = () => {
 
@@ -38,8 +38,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="lastdetails">
-                <img src={logo} alt="logo" />
-                <p>Conditions of Use & Sale &nbsp; &nbsp;&nbsp;  Privacy Notice  &nbsp; &nbsp;&nbsp; Interest-Based Ads  &nbsp; &nbsp;&nbsp;  © 1996-{year}, Amazon.com, Inc. or its affiliates</p>
+               <p>eTown</p>
+                <p>Conditions of Use & Sale &nbsp; &nbsp;&nbsp;  Privacy Notice  &nbsp; &nbsp;&nbsp; Interest-Based Ads  &nbsp; &nbsp;&nbsp;  © 1996-{year}, e-town.vercel.app, Inc. or its affiliates</p>
             </div>
     </footer>
   )
