@@ -98,6 +98,7 @@ const MainComponent = () => {
         <Slide title="Best Seller" />
         <Slide title="Upto 80% off" />
       </div>
+      )
     </>
   );
 };

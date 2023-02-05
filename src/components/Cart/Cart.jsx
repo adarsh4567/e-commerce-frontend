@@ -1,10 +1,11 @@
 import { Divider } from '@mui/material';
-import { fontSize, fontWeight } from '@mui/system';
 import React from 'react';
+import Navbar from '../Navbar/Navbar';
 import "./cart.css";
 
 const Cart = () => {
-  return (
+  return (<>
+    <Navbar showNavbar={true}/>
     <div className='cart_section'>
       <div className='cart_container'>
         <div className='left_cart'>
@@ -17,13 +18,10 @@ const Cart = () => {
         <div className='right_cart'>
           <h3>Fitness Gear</h3>
           <h4>Electric Kettle (1.5L, Silver, Black)</h4>
-
           <Divider/>
-          
           <p className=' mrp'>M.R.P. : ₹1139</p>
           <p>Deal Of The Day : <span style={{color: "#B12704" }}>₹625</span></p>
           <p>You Save : <span style={{color: "#B12704"}}>₹570 (47%)</span></p>
-
           <div className="discount_box">
             <h5>Discount : <span style={{color: "#111"}}>Extra 10% Off</span></h5>
             <h4>Free Delivery :<span style={{color:"#111" ,fontWeight:600}}> Oct 8 - Oct 21 </span> Details</h4>
@@ -33,7 +31,7 @@ const Cart = () => {
         </div>
       </div>
     </div>
-  )
+    </>)
 }
 
 export default Cart
