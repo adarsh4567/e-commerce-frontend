@@ -6,20 +6,11 @@ import { Routes,Route } from 'react-router-dom';
 import Auth from './components/Auth/Auth';
 import Cart from './components/Cart/Cart';
 import Buynow from './components/BuyNow/Buynow';
-import { useEffect, useState } from 'react';
-import { Loader } from './components/Loader/Loader';
 
 
 
 function App() {
-  const [loading,setLoading]=useState(true)
-  useEffect(()=>{
-     setTimeout(() => {
-       setLoading(false)
-     }, 5500);
-  },[])
   return (<>
-    {!loading ? (<>
     <Routes>
       <Route path='/' element={<MainComponent/>}/>
       <Route path='/login' element={<Auth/>}/>
@@ -27,8 +18,6 @@ function App() {
       <Route path='/buynow' element={<Buynow/>}/>
     </Routes>
     <Footer />
-    </>):(<Loader/>)
-    }
     </>);
 }
 

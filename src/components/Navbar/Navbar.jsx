@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 
-const Navbar = () => {
+const Navbar = ({showNavbar}) => {
 
   
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ const Navbar = () => {
 
   }, [prevScrollPos, visible,handleScroll]);
   return (
-    <header className={visible ? 'navbar':'hideNav'}>
+    <header className={visible ? (showNavbar ? 'navbarVisible':'navbar'):'hideNav'}>
       <nav>
         <div className="left">
           <div className="navlogo">
