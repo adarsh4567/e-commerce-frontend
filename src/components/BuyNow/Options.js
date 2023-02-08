@@ -9,9 +9,9 @@ const Options = () => {
         <option value="3">3</option>
         <option value="4">4</option>
       </select>
-      <p style={{cursor:"pointer"}}>Delete</p><span>|</span>
-      <p className='forremovemedia'>Save Or Later</p><span>|</span>
-      <p className='forremovemedia'>See More Like This</p><span>|</span>
+      <p style={{cursor:"pointer"}}>Remove Item</p><span></span>
+      <p className='forremovemedia'>Save Or Later</p><span></span>
+      <h3 className='item_price'>₹1139</h3><span></span>
     </div>
   )
 }

@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 .left_buy h1{
     color: black;
     font-weight: 500;
-    font-size: 28px
+    font-size: 38px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
-
 .buynow_section{
     width: 100%;
     min-height:100vh;
@@ -29,10 +30,14 @@
 
 .left_buy p{
     font-size: 14px;
-    margin: 5px auto;
-    color: #007185;
+    margin: 10px auto;
+    color: gray;
 }
-
+.item_details h3{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+}
 .left_buy span{
     display: block;
     text-align: right;
@@ -42,26 +47,32 @@
 }
 
 .left_buy .item_container{
-    padding: 10px 5px 20px 15px;
+    padding: 20px 5px 20px 15px;
     display: grid;
-    grid-template-columns:.8fr 3fr .1fr;
+    grid-template-columns:1.5fr 2fr .1fr;
+    height: 250px;
 }
 
 .item_container img{
-    width: 150px;
-    /* margin-left: 1rem; */
+    width: 250px;
+    background: transparent;
+    height: 250px;
+    margin-left: 4rem;
 }
 
 .item_containert h3{
     font-weight: 500;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .item_containert .item_price{
     font-weight:700;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .item_containert p{
     font-size: 13px;
+    font-family: 'Roboto Condensed', sans-serif;
     color: #565959!important;
     font-weight: 500;
 }
@@ -73,7 +84,7 @@
 }
 
 .item_details .unusuall{
-    color:#c45500!important;
+    color:gray;
 }
 
 .item_details .add_remove_select{
@@ -83,8 +94,9 @@
 
 
 .item_details .add_remove_select p{
-    color: #007185!important;
-    font-size: 13px;
+    color: black;
+    font-weight: 500;
+    font-size: 15px;
     margin-top: 10px;
 }
 
@@ -108,6 +120,7 @@
 .sub_item h3{
     font-weight: 500;
     margin: 10px 0;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .left_buy .diffrentprice{
@@ -137,6 +150,7 @@
     font-size: 12px;
     font-weight: 500;
     margin-top: 20px;
+    margin-bottom: -10px;
 }
 
 .buynow_container .right_buy .cost_right h3{
@@ -264,6 +278,10 @@
         width: 100%;
         margin-right:0;
     }
+}
+
+.leftbuyprice{
+    margin-right: 3rem;
 }
 
 
