@@ -9,6 +9,24 @@
     transition: all .5s;
     width: 100%;
 }
+.applyCoupon{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+.applyText{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.applyField{
+    width: 100%;
+}
+.inputField{
+    width: 100%;
+    height: 10px;
+}
+
 .navbarVisible{
     background-color: black;
     width:100%;
