@@ -1,4 +1,5 @@
 import React from 'react'
+import {MdDelete} from 'react-icons/md'
 
 const Options = () => {
   return (
@@ -9,8 +10,13 @@ const Options = () => {
         <option value="3">3</option>
         <option value="4">4</option>
       </select>
-      <p style={{cursor:"pointer"}}>Remove Item</p><span></span>
-      <p className='forremovemedia'>Save Or Later</p><span></span>
+      <div className='baseItems'>
+      <div className='removeItem'>
+        <div className='removeText'>Remove Item</div>
+        <div className='removeIcon'><MdDelete style={{marginTop:'5px'}}/></div>
+      </div>
+      <div className='saveItem'>Save for Later</div>
+      </div>
       <h3 className='item_price'>₹1139</h3><span></span>
     </div>
   )

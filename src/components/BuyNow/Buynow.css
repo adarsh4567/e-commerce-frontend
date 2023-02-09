@@ -5,6 +5,7 @@
     font-size: 38px;
     font-family: 'Roboto Condensed', sans-serif;
 }
+
 .buynow_section{
     width: 100%;
     min-height:100vh;
@@ -12,7 +13,42 @@
     top: 60px;
     background-color: #EAEDED!important;
 }
-
+.baseItems{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.removeItem{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .5s;
+}
+.removeItem:hover{
+    color: red;
+    cursor: pointer;
+}
+.removeText{
+    font-weight: 400;
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 20px;
+}
+.removeItem{
+    font-size: 18px;
+}
+.saveItem{
+    font-weight: 400;
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 20px;
+}
+.saveItem:hover{
+    color: #007185;
+    cursor: pointer;
+}
 .buynow_section .buynow_container{  
     margin: 0 auto;
     padding:40px 20px;
@@ -23,9 +59,11 @@
 
 .buynow_container .left_buy{
     flex: .7;
+    box-shadow: 0px 4px 18px -5px rgba(0,0,0,0.55);
+    border-radius: 20px;
     background-color: #fff;
     padding: 10px 20px;
-    border-radius: 2px;
+    /* border-radius: 2px; */
 }
 
 .left_buy p{
@@ -102,14 +140,12 @@
 
 .item_details .add_remove_select select{
     padding: 5px;
-    width: 50px;
+    width: 90px;
     border-radius: 8px;
-    background-color: #eeeded;
     letter-spacing: .2px;
     margin-top: 4px;
     outline: none;
-   border: 1px solid #e7e7e7;
-    box-shadow: 0 0 15px -7px rgba(0,0,0,1);
+   border: 2px solid #d2d2d2;
 }
 
 .sub_item{
@@ -127,22 +163,42 @@
     display: none;
 }
 
+.itemDetails{
+    display: flex;
+    color: #6b6b6b;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.subTotal{
+    display: flex;
+    margin-top: 2rem;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* right buy now */
 .buynow_container .right_buy{
-    flex: .2;
-    margin-right: -50px;
-    padding: 0 20px;
-    border-radius: 2px;
+    flex: .3;
+    margin-left: 2rem;
+    padding: 0 2px;
+    box-shadow: 0px 4px 18px -5px rgba(0,0,0,0.55);
+    border-radius: 20px;
+    background: white;
 }
 .buynow_container .right_buy img{
     width: 300px;
 }
 
 .buynow_container .right_buy .cost_right{
-    background-color: #fff;
+   background: transparent;
     padding: 10px 20px;
     margin-top: 10px;
-    min-height: 250px;
+    height: 90%;
+    /* min-height: 250px; */
 }
 
 .buynow_container .right_buy .cost_right p{
@@ -165,14 +221,15 @@
     border-radius: 8px;
     border: none;
     outline: none;
-    background-color:#FFD814;
+    background-color: white;
     font-size: 14px;
     cursor: pointer;
-    box-shadow: 0 0 10px -5px rgba(0,0,0,.5);
+    border: 2px solid rgb(179, 178, 178);
+    transition: all .5s;
 }
 
 .cost_right .rightbuy_btn:hover{
-    background-color:#f3cc0a;
+    border: 2px solid black;
 }
 
 .cost_right .emi{
