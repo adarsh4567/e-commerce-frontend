@@ -17,81 +17,58 @@ const MainComponent = () => {
             <div className="subHead">
               <h1>
                 <span className="word">
-                  Unlimited Range of Shoe<span class="superscript">s</span>{" "}
+                  Unlimited Range of HeadPhone
                 </span>
-                <span className="word">By Nike</span>
+                <span className="word">By Headzone</span>
               </h1>
             </div>
-            <div className="content">
-              <div className="card-container">
-                <div className="card-face face-1">
-                  <div className="top-part">
-                    <div className="logo hide">
-                      <img
-                        src="https://raw.githubusercontent.com/sefyudem/3D-Product-Card/main/img/logo.png"
-                        alt="Nike Logo"
-                      />
-                    </div>
-                    <h2 className="hide">Nike revolution 5</h2>
-                    <div className="shoe-info">
-                      <span className="shoe-new hide">New</span>
-                      <span className="shoe-year hide">2021</span>
-                    </div>
+              <div class="card">
+                <div class="float-dots">
+                  <div>
+                    <span>30% OFF</span>
                   </div>
-
-                  <div className="bottom-part">
-                    <h2 className="shoe-price hide">
-                      <span>₹</span>13000.00
-                    </h2>
-                    <div className="right-arrow hide">
-                      <img
-                        src="https://raw.githubusercontent.com/sefyudem/3D-Product-Card/main/img/right-arrow.png"
-                        alt=""
-                      />
-                    </div>
+                  <div>
+                    <span>₹3000</span>
                   </div>
+                  <div></div>
                 </div>
-                <div className="card-face face-2">
-                  <div className="top-part">
-                    <div className="header">
-                      <h3 className="heading hide">Epic shoes</h3>
-                      <a className="wish hide">
-                        <i class="far fa-heart"></i>
-                      </a>
-                    </div>
-                    <ul className="features hide">
-                      <li>Smooth & Fast.</li>
-                      <li>Lightweight & Breathable Support.</li>
-                      <li>Best For Running.</li>
-                    </ul>
-                    <div className="color-wrap hide">
-                      <span>Color :</span>
-                      <div className="colors">
-                        <span className="color blue active"></span>
-                        <span className="color black"></span>
-                        <span className="color white"></span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="buy-wrap">
-                    <a href="#" className="buy hide">
-                      Add to cart <i class="fas fa-shopping-cart"></i>
-                    </a>
-                  </div>
+                <div class="title">
+                  <h1>White Headset</h1>
                 </div>
 
-                <div className="shoe-image-wrapper">
-                  <div className="shoe-img">
-                    <img
-                      src="https://raw.githubusercontent.com/sefyudem/3D-Product-Card/main/img/nike.png"
-                      alt="Nike shoe"
-                      class="shoe"
-                    />
-                  </div>
+                <div class="image"></div>
+
+                <div class="card-footer">
+                  <span>₹3000</span>
+
+                  <a href="" class="btn-buy">
+                    buy now
+                  </a>
+                </div>
+                <div class="hover-infos">
+                  <span class="type">Gamer Headset</span>
+                  <span class="brand">Razer</span>
+                  <span class="prizes">
+                    <i>$</i>Buy and win prizes!
+                  </span>
+                </div>
+
+                <div class="yellow-circle">
+                  <div></div>
+                </div>
+
+                <div class="purple-circle">
+                  <div></div>
+                </div>
+
+                <div class="hover-arrow-left">
+                  <img src="img/arrow-left.svg" alt="" />
+                </div>
+
+                <div class="hover-arrow-right">
+                  <img src="img/arrow-right.svg" alt="" />
                 </div>
               </div>
-            </div>
           </main>
         </div>
         <Slide title="Today's Deal" />

@@ -26,6 +26,7 @@ main {
   width: 100%;
   overflow: hidden;
   background-color: black;
+  z-index: 100;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-evenly;
@@ -34,10 +35,12 @@ main {
 }
 .center-product{
   margin-top: -1rem;
+  z-index: 100;
 }
 .subHead{
     color: white;
     flex: .6;
+    z-index: 100;
     font-family: "Prata", serif;
 }
 :root {
@@ -86,7 +89,7 @@ main {
   h1 {
     color: white;
     font-family: "Playfair Display", Vidaloka, serif;
-    font-size: 7rem;
+    font-size: 6rem;
     line-height:1;
     perspective: 500px;
   }
@@ -222,304 +225,429 @@ main {
   transform-style: preserve-3d;
 }
 
-.card-face {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 2.5rem 3rem;
-  backface-visibility: hidden;
-  transition: 1s;
-  transform-style: preserve-3d;
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+
+    /* color pallete */
+    --yellow: #FDDC00;
+    --purple: #9000FF;
+    --darkpuple: #261A2E;
+    --white: #FEFEFE;
+    --red: #FF0000;
+    --bg: #161A1D;
+
+    /* shadow */
+    --shadow: 8px 10px 8px rgba(0, 0, 0, 0.6);
 }
 
-.face-1 {
- background: transparent;
+
+.card {
+
+    width: 600px;
+    position: relative;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 4px 8px 30px rgba(0, 0, 0, 0.6);
+    transition: all .6s ease;
+    cursor: pointer;
+    z-index: 100;
 }
 
-.face-2 {
-    background: transparent;
+.card .float-dots {
+
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.card-container:hover .face-1 {
-  cursor: pointer;
-  transform: translate(-100%) perspective(1000px) rotateY(-180deg);
+.card .float-dots div:nth-child(1) {
+
+    background-color: var(--yellow);
+    padding: 14px 7px;
+    border-radius: 10px;
+    color: var(--purple);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow);
+    transition: all .6s ease;
 }
 
-.card-container:hover .face-2 {
-  cursor: pointer;
-  transform: translate(0%) perspective(0px) rotateY(0deg);
+
+.card:hover .float-dots div:nth-child(1) {
+
+    transform: translate(-50px, -30px);
 }
 
-.logo {
-  width: 50px;
-  transform: translateZ(40px);
-  transform-style: preserve-3d;
+.card .float-dots div:nth-child(2) {
+
+    background-color: var(--purple);
+    border-radius: 10px;
+    padding: 4px;
+    color: var(--white);
+    font-size: 0;
+    font-weight: 700;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow);
+    transition: all .6s ease;
 }
 
-.face-1 .top-part > h2 {
-  font-size: 2.1rem;
-  text-transform: uppercase;
-  font-family: "Roboto Condensed", sans-serif;
-  letter-spacing: 2px;
-  margin: 0.4rem 0 0.6rem;
-  transform: translateZ(50px);
-  transform-style: preserve-3d;
+.card:hover .float-dots div:nth-child(2) {
+
+    padding: 8px;
+    font-size: 16px;
+    transform: translate(70px, -45px);
 }
 
-.shoe-info {
-  display: flex;
-  align-items: center;
+
+.card .float-dots div:nth-child(3) {
+
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 4px;
+    box-shadow: var(--shadow);
+    transition: all .6s ease;
 }
 
-.shoe-new {
-  margin-right: 0.8rem;
-  padding: 0.3rem 0.6rem;
-  background-color: #fff;
-  color: rgb(30, 35, 66);
-  border-radius: 3px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  transform: translateZ(40px);
-  transform-style: preserve-3d;
+
+.card:hover .float-dots div:nth-child(3) {
+
+    padding: 15px;
+    transform: translate(-20px, -45px);
 }
 
-.shoe-year {
-  color: #eee;
-  font-size: 1.05rem;
-  transform: translateZ(40px);
-  transform-style: preserve-3d;
+.card .title h1 {
+
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--white);
 }
 
-.bottom-part {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.card .image {
+
+    width: 430px;
+    height: 400px;
+    position: relative;
+    z-index: 100;
+    margin: 70px auto;
+    background-image: url('../../assets/headset1.svg');
+    background-size: contain;
+    background-position: center;
+    transition: transform .6s ease, background-image .5s ease;
 }
 
-.shoe-price {
-  font-weight: 400;
-  font-size: 2.3rem;
-  font-family: "Roboto Condensed", sans-serif;
-  line-height: 0.95;
-  display: flex;
-  transform: translateZ(45px);
-  transform-style: preserve-3d;
+
+.card:hover .image {
+
+    background-image: url('../../assets/headset2.svg');
+    transform: scale(1.55) translateX(-24px);
 }
 
-.shoe-price span {
-  font-size: 1.4rem;
-  margin-right: 0.2rem;
+.card .card-footer {
+
+    width: 100%;
+    text-align: center;
+    padding-bottom: 15px;
+    position: relative;
 }
 
-.right-arrow {
-  width: 35px;
-  padding-top: 0.3rem;
-  transform: translateZ(45px);
-  transform-style: preserve-3d;
+.card .card-footer span {
+
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    transition: all .3s ease;
 }
 
-.right-arrow img {
-  filter: invert(1);
-  animation: move 0.5s infinite ease alternate;
+
+.card:hover .card-footer span {
+
+    opacity: 0;
 }
 
-@keyframes move {
-  from {
-    transform: translateX(-5px);
-  }
-  to {
-    transform: translateX(5px);
-  }
+.card .card-footer .btn-buy {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 200px;
+    height: 34px;
+    background-color: var(--white);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--darkpuple);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: transform .7s ease;
+    transform: translateY(80px);
+    opacity: 0;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.card .card-footer .btn-buy:hover{
+
+    background-color: var(--red);
+    color: var(--white);
 }
 
-.heading {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 1.3rem;
-  font-family: "Roboto Condensed", sans-serif;
-  margin-top: 0.5rem;
-  transform: translateZ(35px);
-  transform-style: preserve-3d;
+
+.card:hover .card-footer .btn-buy {
+
+    transform: translateY(0);
+    opacity: 1;
 }
 
-.wish {
-  color: #fff;
-  font-size: 1.4rem;
-  transform: translateZ(30px);
-  transform-style: preserve-3d;
+.card .hover-reviews {
+
+    position: absolute;
+    left: -110px;
+    top: 22%;
+    z-index: 1;
+    padding: 18px 10px;
+    border-radius: 10px;
+    background-color: var(--purple);
+    box-shadow: var(--shadow);
+    transition: all .6s ease;
+    transform: scale(0);
+    transform-origin: top right;
 }
 
-.features {
-  list-style: none;
-  margin: 3rem 0;
-  color: #eee;
-  font-weight: 300;
-  transform: translateZ(40px);
-  transform-style: preserve-3d;
+
+.card:hover .hover-reviews {
+
+    transform: scale(1);
 }
 
-.features li {
-  margin-bottom: 0.3rem;
+.card .hover-reviews a {
+
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    display: block;
+    margin-bottom: 15px;
 }
 
-.color-wrap {
-  display: flex;
-  align-items: center;
-  transform: translateZ(40px);
-  transform-style: preserve-3d;
+.card .hover-reviews i {
+
+    font-size: 24px;
+    color: var(--yellow);
+    margin-inline: 2px;
+    text-shadow: var(--shadow);
 }
 
-.color-wrap > span {
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-right: 1.3rem;
-  transform: translateZ(40px);
-  transform-style: preserve-3d;
+.card .hover-reviews i:last-child {
+
+    color: var(--white);
 }
 
-.colors {
-  display: flex;
-  align-items: center;
+.card .hover-infos {
+
+    position: absolute;
+    width: 140px;
+    right: -85px;
+    bottom: 22%;
+    z-index: 1;
+    text-align: end;
+    color: var(--white);
+    padding: 12px 10px;
+    border-radius: 10px;
+    background-color: var(--red);
+    box-shadow: var(--shadow);
+    transition: all .6s ease;
+    transform: scale(0);
+    transform-origin: top left;
 }
 
-.color {
-  display: inline-block;
-  width: 27px;
-  height: 27px;
-  border-radius: 50%;
-  margin-right: 0.6rem;
-  cursor: pointer;
-  transition: 0.3s;
+
+.card:hover .hover-infos {
+
+    transform: scale(1);
 }
 
-.color.blue {
-  background-color: #2980b9;
-  border: 4.5px solid #2980b9;
+.card .hover-infos .type,
+.card .hover-infos .brand {
+
+    font-size: 15px;
+    font-weight: 700;
+    display: block;
 }
 
-.color.black {
-  background-color: #333;
-  border: 4.5px solid #333;
+.card .hover-infos .brand {
+
+    font-weight: 200;
+    padding-bottom: 10px;
 }
 
-.color.white {
-  background-color: #ccc;
-  border: 4.5px solid #ccc;
+.card .hover-infos .prizes {
+
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
-.color.active {
-  border: 4.5px solid #fff;
+.card .hover-infos .prizes i {
+
+    font-style: normal;
+    color: #FDDC00;
+    font-size: 15px;
+    margin-right: 5px;
 }
 
-.color:hover {
-  transform: scale(1.1);
+.card .hover-arrow-left {
+
+    position: absolute;
+    left: -90px;
+    bottom: 0;
+    z-index: 2;
+    width: 140px;
+    transition: all .2s ease-out;
+    transform: translate(-70px, 90px);
+    opacity: 0;
 }
 
-.buy-wrap {
-  display: flex;
-  justify-content: flex-end;
+
+.card:hover .hover-arrow-left {
+
+    opacity: 1;
+    transform: translate(0);
+    animation: bounceLeft infinite 1.6s;
+    transition: all .6s ease-in-out;
 }
 
-.buy {
-  display: inline-block;
-  padding: 0.5rem 1.7rem;
-  background-color: #2980b9;
-  border-radius: 4px;
-  color: #fff;
-  transition: background-color 0.3s, opacity 0.7s !important;
-  transform: translateZ(45px);
-  transform-style: preserve-3d;
+
+@keyframes bounceLeft {
+    0% {
+
+        bottom: 0;
+        left: -90px;
+    }
+
+    50% {
+
+        bottom: 15px;
+        left: -80px;
+    }
+
+    100% {
+
+        bottom: 0;
+        left: -90px;
+    }
 }
 
-.buy i {
-  font-size: 0.9rem;
+.card .hover-arrow-right {
+
+    position: absolute;
+    right: -100px;
+    top: 100px;
+    z-index: 2;
+    width: 140px;
+    transition: all .2s ease-out;
+    transform: translate(70px, -90px);
+    opacity: 0;
 }
 
-.buy:hover {
-  background-color: #2875a9;
+
+.card:hover .hover-arrow-right {
+
+    opacity: 1;
+    transform: translate(0) rotate3d(1, 1, 1, -12deg);
+    animation: bounceRight infinite 1.6s;
+    transition: all .6s ease-out;
 }
 
-.face-1 .hide {
-  opacity: 1;
-  transition: 0.7s;
+
+@keyframes bounceRight {
+    0% {
+
+        right: -100px;
+        top: 100px;
+    }
+
+    50% {
+
+        right: -115px;
+        top: 90px;
+    }
+
+    100% {
+
+        right: -100px;
+        top: 100px;
+    }
 }
 
-.face-2 .hide {
-  opacity: 0;
-  transition: 0.7s;
+.card .yellow-circle{
+
+    position: absolute;
+    right: 0;
+    top: 20%;
+    width: 144px;
+    height: 300px;
+    overflow: hidden;
+    z-index: 0;
 }
 
-.content:hover .face-1 .hide {
-  opacity: 0;
+.card .yellow-circle div{
+
+    width: 288px;
+    height: 277px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: -290px;
+    box-shadow: var(--shadow);
+    transition: all 1s ease;
 }
 
-.content:hover .face-2 .hide {
-  opacity: 1;
+
+.card:hover .yellow-circle div{
+
+    transition: all .5s ease;
+    right: -144px;
 }
 
-.shoe-image-wrapper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  transform-style: preserve-3d;
-  pointer-events: none;
+
+.card .purple-circle{
+
+    position: absolute;
+    left: 0;
+    bottom: 12%;
+    width: 130px;
+    height: 200px;
+    overflow: hidden;
+    z-index: 0;
 }
 
-.shoe-img {
-  position: absolute;
-  width: 130%;
-  top: 30%;
-  left: 0%;
-  transform: translate(-45%, -55%) translateZ(200px);
-  transform-style: preserve-3d;
-  filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.2));
-  animation: float 2s alternate ease-in-out infinite;
-  transition: 0.65s;
+.card .purple-circle div{
+
+    width: 210px;
+    height: 181px;
+    background-color: var(--purple);
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    left: -230px;
+    box-shadow: var(--shadow);
+    transition: all .8s ease;
 }
 
-@keyframes float {
-  0% {
-    transform: translateX(calc(-45% - 5px)) translateY(calc(-50%))
-      translateZ(200px);
-  }
 
-  100% {
-    transform: translateX(calc(-45% + 5px)) translateY(calc(-50%))
-      translateZ(400px);
-  }
-}
+.card:hover .purple-circle div{
 
-.shoe {
-  transform: rotate(-30deg);
-  transition: 0.6s;
-}
-
-.content:hover .shoe-img {
-  width: 115%;
-  top: 50%;
-}
-
-.content:hover .shoe {
-  transform: rotate(-10deg);
-}
-
-@media (max-width: 550px) {
-  .content {
-    transform: scale(0.63);
-  }
+    transition: all .6s ease;
+    top: 0;
+    left: -110px;
 }
