@@ -3,6 +3,9 @@ import { Divider } from "@mui/material";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Link } from "react-router-dom";
+import { useFetchProducts } from "../../customHooks/productsHook";
+
 
 import "./slide.css";
 
@@ -25,15 +28,15 @@ const responsive = {
   },
 };
 
-const Slide = ({ title, isFirstSlide,products }) => {
- 
+const Slide = ({ title, isFirstSlide}) => {
+  const {data,isLoading} = useFetchProducts();
   return (
     <div className="product_section">
       <div className="product_deal">
         <div className="title"> {title} </div>
       </div>
       <Divider/>
-    <div className="carousel-content">
+      {!isLoading && <div className="carousel-content">
       <Carousel
         swipeable={true}
         draggable={false}
@@ -57,9 +60,10 @@ const Slide = ({ title, isFirstSlide,products }) => {
         itemClass="carousel-item"
         containerClass="carousel-container"
       >
-        {products?.map((e) => {
+        {data?.map((e) => {
           return (
-            <div className="product_items">
+            <Link to={`/getproductsone/${e.id}`}>
+            <div key={e.id} className="product_items">
               <div className="product_img">
                 <img src={e.url} alt="productitem" />
               </div>
@@ -67,10 +71,11 @@ const Slide = ({ title, isFirstSlide,products }) => {
               <p className="product_offer">{e.discount}</p>
               <p className="product_explore">{e.tagline}</p>
             </div>
+            </Link>
           );
         })}
       </Carousel>
-      </div>
+      </div>}
     </div>
   );
 };

@@ -3,17 +3,10 @@ import Banner from "../Banner/Banner";
 import "./mainComponent.css";
 import Slide from "../slide/slide";
 import Navbar from "../Navbar/Navbar";
-import { useQuery } from "react-query";
-import axios from "axios";
+import Footer from "../Footer/Footer";
+
 
 const MainComponent = () => {
-  const {data:products} = useQuery({
-    queryKey:['products'],
-    queryFn: async()=>{
-      const {data} = await axios.get('http://localhost:8000/getProducts')
-      return data;
-    }
-  })
   return (
     <>
       <div className="home_section">
@@ -80,10 +73,11 @@ const MainComponent = () => {
               </div>
           </main>
         </div>
-        <Slide products={products} title="Today's Deal" />
-        <Slide products={products} title="Best Seller" />
-        <Slide products={products} title="Upto 80% off" />
+        <Slide title="Today's Deal" />
+        <Slide title="Best Seller" />
+        <Slide title="Upto 80% off" />
       </div>
+      <Footer />
       )
     </>
   );

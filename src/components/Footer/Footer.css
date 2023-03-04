@@ -1,6 +1,7 @@
 footer{
     position: relative;
     top: 60px;
+    z-index: 99;
     background-color:#131A22;
 }
 
