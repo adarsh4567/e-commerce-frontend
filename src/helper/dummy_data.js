@@ -1,4 +1,6 @@
+
 import axios from "axios";
+import { queryClient } from "..";
 
 export const bannerImages = [
   "https://cdn.shopify.com/s/files/1/0997/6284/files/image_2023_02_24T11_14_00_895Z_1_1_1900x.png?v=1677476136",
@@ -13,8 +15,9 @@ export const getProducts = async()=>{
   return data
 }
 
-export const getOneProduct = async(id)=>{
-  const response = await axios.get(`http://localhost:8000/product/${id}`);
-  const data = response.data;
-  return data
-}
+export const getOneProduct = (id)=>{
+  const data =  queryClient.getQueryData(['products'])
+  const filterData = data.filter((item)=> item.id==id)
+  const singleProduct = filterData[0];
+  return singleProduct
+} 

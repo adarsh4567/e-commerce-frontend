@@ -4,10 +4,12 @@
     align-items: center;
     margin: 1rem;
     z-index: 2;
+    color: black;
 
 }
 .carousel-container{
    padding: 40px;
+   color: black;
 }
 .carousel-item{
     padding: 10px;
@@ -94,6 +96,10 @@
     padding-left: 20px;
     text-shadow: 3px 2px 3px rgba(206,206,206,0.44);
     font-family: "Prata", serif;
+}
+
+.product_name,.product_offer,.product_explore{
+    color: black;
 }
 
 
