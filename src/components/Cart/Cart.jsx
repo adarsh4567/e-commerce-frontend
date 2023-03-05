@@ -4,6 +4,7 @@ import { useFetchOneProduct } from "../../customHooks/productsHook";
 import Navbar from "../Navbar/Navbar";
 import "./cart.css";
 import { useParams } from "react-router-dom";
+import Slide from "../slide/slide";
 
 const Cart = () => {  
   const {id} = useParams()
@@ -11,8 +12,8 @@ const Cart = () => {
 
   return (
     <>
-      <Navbar showNavbar={true} />
       <div className="cart_section">
+       <Navbar showNavbar={true} />
         <div className="cart_container">
           <div className="left_cart">
             <img
@@ -24,8 +25,8 @@ const Cart = () => {
             </div>
           </div>
           <div className="right_cart">
-            <h3>{data?.title?.shortTitle}</h3>
-            <h4>{data?.title?.longTitle}</h4>
+            <div className="short">{data?.title?.shortTitle}</div>
+            <div className="long">{data?.title?.longTitle}</div>
             <Divider />
             <p className=" mrp">M.R.P. : ₹1139</p>
             <p>
@@ -71,6 +72,7 @@ const Cart = () => {
             </div>
           </div>
         </div>
+        <Slide title='More products' isProductPage={true}/>
       </div>
     </>
   );

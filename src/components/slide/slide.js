@@ -28,17 +28,16 @@ const responsive = {
   },
 };
 
-const Slide = ({ title, isFirstSlide}) => {
+const Slide = ({ title, isFirstSlide,isProductPage}) => {
   const {data,isLoading} = useFetchProducts();
   return (
-    <div className="product_section">
+    <div className={!isProductPage ? "product_section":"productPage"}>
       <div className="product_deal">
-        <div className="title"> {title} </div>
+        <div className={!isProductPage ? 'title':'productTitle'}> {title} </div>
       </div>
       <Divider/>
       {!isLoading && <div className="carousel-content">
       <Carousel
-        swipeable={true}
         draggable={false}
         showDots={false}
         responsive={
@@ -62,7 +61,7 @@ const Slide = ({ title, isFirstSlide}) => {
       >
         {data?.map((e) => {
           return (
-            <Link to={`/getproductsone/${e.id}`}>
+            <Link to={`/getproductsone/${e.id}`} onClick={()=> window.scrollTo(0,0)} target={!isProductPage ? '':'_blank'}>
             <div key={e.id} className="product_items">
               <div className="product_img">
                 <img src={e.url} alt="productitem" />
