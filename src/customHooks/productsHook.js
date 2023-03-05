@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query"
-import axios from "axios"
 import { getOneProduct, getProducts } from "../helper/dummy_data"
 
 export const useFetchProducts = ()=> {

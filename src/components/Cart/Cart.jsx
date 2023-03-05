@@ -4,22 +4,14 @@ import { useFetchOneProduct } from "../../customHooks/productsHook";
 import Navbar from "../Navbar/Navbar";
 import "./cart.css";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 
 const Cart = () => {  
-  const getOneProduct = async(id)=>{
-    const response = await axios.get(`http://localhost:8000/product/${id}`)
-    const data = response.data;
-    console.log(data);
-    return data
-  }
   const {id} = useParams()
   const {data} = useFetchOneProduct(id)
 
-  
   return (
     <>
-      <Navbar showNavbar={true} isStatic={true} />
+      <Navbar showNavbar={true} />
       <div className="cart_section">
         <div className="cart_container">
           <div className="left_cart">
