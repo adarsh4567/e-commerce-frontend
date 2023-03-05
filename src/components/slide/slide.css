@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400&display=swap');
 .product_deal{
     display: flex;
     justify-content: flex-start;
@@ -31,6 +32,9 @@
     border-radius: 20px;
     box-shadow: 0px 4px 18px -5px rgba(0,0,0,0.2);
     margin-left: 1rem;
+}
+.productPage{
+    width: 98%;
 }
 
 .home_section .slide_part{
@@ -98,12 +102,23 @@
     font-family: "Prata", serif;
 }
 
+.productTitle{
+    color: black;
+    font-weight: 200;
+    font-size: 30px;
+    padding-top: 25px;
+    padding-left: 20px;
+    text-shadow: 3px 2px 3px rgba(206,206,206,0.44);
+    font-family: 'Signika Negative', sans-serif;
+    
+}
+
 .product_name,.product_offer,.product_explore{
     color: black;
 }
 
 
-.product_section .product_items img{
+.product_items img{
     width: 175px;
     height: 200px;
     
@@ -134,7 +149,7 @@
     color: black;
 }
 
-.product_section .product_items p{
+.product_items p{
     font-size: 14px;
     margin: 5px 0;
 }
