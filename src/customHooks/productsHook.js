@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import { getOneProduct, getProducts } from "../helper/dummy_data"
+import { getOneProduct, getProducts } from "../helper/helper_data"
 
 export const useFetchProducts = ()=> {
       return useQuery({queryKey:['products'],queryFn:getProducts})

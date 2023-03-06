@@ -1,6 +1,6 @@
 import React from 'react'
 import Carousel from 'react-material-ui-carousel'
-import { bannerImages } from '../../helper/dummy_data'
+import { bannerImages } from '../../helper/helper_data'
 import './banner.css'
 
 const Banner = ({isSubBanner,subBannerImages}) => {
