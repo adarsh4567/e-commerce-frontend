@@ -1,15 +1,25 @@
-import { Divider } from "@mui/material";
-import React from "react";
+import { MdLocalOffer } from "react-icons/md";
+import React, { useEffect } from "react";
 import { useFetchOneProduct } from "../../customHooks/productsHook";
 import Navbar from "../Navbar/Navbar";
 import "./cart.css";
 import { useParams } from "react-router-dom";
 import Slide from "../slide/slide";
 
+const offerData = [
+  "Bank Offer5% Cashback on  State Bank India CardT&C",
+  "Buy this Product and Get Extra ₹500 Off on Bikes & ScootersT&C",
+  "Partner OfferSign up for Buy now Pay Later and get our Gift Card worth up to ₹1000*",
+  "No cost Emi options are available"
+
+]
+
 const Cart = () => {  
   const {id} = useParams()
   const {data} = useFetchOneProduct(id)
-
+  useEffect(()=>{
+   window.scrollTo(0,0)
+  },[])
   return (
     <>
       <div className="cart_section">
@@ -22,22 +32,31 @@ const Cart = () => {
             />
             <div className='cart_btn'>
             <button class="button type1">Buy Now</button>
+            <button class="button type1">Add To Cart</button>
             </div>
           </div>
           <div className="right_cart">
             <div className="short">{data?.title?.shortTitle}</div>
             <div className="long">{data?.title?.longTitle}</div>
-            <Divider />
-            <p className=" mrp">M.R.P. : ₹1139</p>
-            <p>
-              Deal Of The Day : <span style={{ color: "#B12704" }}>{`₹${data?.price?.mrp}`}</span>
-            </p>
-            <p>
-              You Save : <span style={{ color: "#B12704" }}>{`₹${data?.price?.cost}`}</span>
-            </p>
+            <div className="mrp">M.R.P. :{`₹${data?.price?.mrp}`}</div>
+            <h3>
+              Deal Of The Day : <span style={{ color: "#B12704" }}>{`₹${data?.price?.cost}`}</span>
+            </h3>
+            <div>
+              You Save : <span style={{ color: "#B12704" }}>{`₹${data?.price?.mrp-data?.price?.cost}`}</span>
+            </div>
+            <div className="offers">
+               <div className="offer_head">Available offers</div>
+               {offerData.map((item)=><>
+                <div className="offer_item">
+                  <div><MdLocalOffer style={{color:'brown',marginRight:'3px',fontSize:'20px'}}/></div>
+                  <div>{item}</div>
+                </div>
+               </>)}
+            </div>
             <div className="discount_box">
               <h5>
-                Discount : <span style={{ color: "#111" }}>{data?.discount}</span>
+                Discount : <span style={{ color: "#111" }}>{data?.price?.discount}</span>
               </h5>
               <h4>
                 Free Delivery :
@@ -67,9 +86,6 @@ const Cart = () => {
                 {data?.description}
               </span>
             </p>
-            <div className="cart_btn">
-              <button class="button type1">Add To Cart</button>
-            </div>
           </div>
         </div>
         <Slide title='More products' isProductPage={true}/>

@@ -105,11 +105,11 @@
 .productTitle{
     color: black;
     font-weight: 200;
-    font-size: 30px;
+    font-size: 25px;
     padding-top: 25px;
     padding-left: 20px;
     text-shadow: 3px 2px 3px rgba(206,206,206,0.44);
-    font-family: 'Signika Negative', sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     
 }
 

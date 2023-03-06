@@ -53,15 +53,14 @@ const Slide = ({ title, isFirstSlide,isProductPage}) => {
         infinite={true}
         autoPlay={true}
         autoPlaySpeed={4000}
-        keyBoardControl={true}
-        removeArrowOnDeviceType={["tablet", "mobile"]}
+        removeArrowOnDeviceType={["tablet", "mobile","desktop"]}
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item"
         containerClass="carousel-container"
       >
         {data?.map((e) => {
           return (
-            <Link to={`/getproductsone/${e.id}`} onClick={()=> window.scrollTo(0,0)} target={!isProductPage ? '':'_blank'}>
+            <Link to={`/getproductsone/${e.id}`} target={!isProductPage ? '':'_blank'}>
             <div key={e.id} className="product_items">
               <div className="product_img">
                 <img src={e.url} alt="productitem" />
