@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import { queryClient } from "..";
 
@@ -9,15 +8,18 @@ export const bannerImages = [
   "https://dzp3g6fzlnblr.cloudfront.net/wp-content/uploads/2021/07/Dh1.jpg",
 ];
 
-export const getProducts = async()=>{
-  const response = await axios.get('http://localhost:8000/getProducts');
-  const data = response.data;
-  return data
-}
+// helper functions
 
-export const getOneProduct = (id)=>{
-  const data =  queryClient.getQueryData(['products'])
-  const filterData = data.filter((item)=> item.id==id)
+export const getProducts = async () => {
+  const response = await axios.get("http://localhost:8000/getProducts");
+  const data = response.data;
+  return data;
+};
+
+export const getOneProduct = (id) => {
+  const data = queryClient.getQueryData(["products"]);
+  const filterData = data.filter((item) => item.id == id);
   const singleProduct = filterData[0];
-  return singleProduct
-} 
+  return singleProduct;
+};
+
