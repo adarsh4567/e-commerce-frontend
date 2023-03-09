@@ -38,7 +38,6 @@ const Slide = ({ title, isFirstSlide,isProductPage}) => {
       <Divider/>
       {!isLoading && <div className="carousel-content">
       <Carousel
-        draggable={false}
         showDots={false}
         responsive={
           isFirstSlide
