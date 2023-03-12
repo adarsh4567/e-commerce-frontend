@@ -59,8 +59,8 @@ const Slide = ({ title, isFirstSlide,isProductPage}) => {
       >
         {data?.map((e) => {
           return (
-            <Link to={`/getproductsone/${e.id}`} target={!isProductPage ? '':'_blank'}>
-            <div key={e.id} className="product_items">
+            <Link  to={`/getproductsone/${e.id}`} target={!isProductPage ? '':'_blank'}>
+            <div key={e.id}  className="product_items">
               <div className="product_img">
                 <img src={e.url} alt="productitem" />
               </div>

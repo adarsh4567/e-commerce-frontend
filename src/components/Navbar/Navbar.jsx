@@ -5,30 +5,21 @@ import Badge from "@mui/material/Badge";
 import { ShoppingCart } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import { queryClient } from "../..";
+import { useSearchProduct } from "../../customHooks/productsHook";
 
 const Navbar = ({ showNavbar }) => {
   const navigate = useNavigate();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [search, setSearch] = useState();
-  const [searchData, setSearchData] = useState();
-  const data = queryClient.getQueryData(["products"]);
 
-  const handleSearch = (e) => {
-    let inputValue = e.target.value;
-    setSearch(inputValue);
-    const filterData = data.filter((item) => {
-      let searchTerm = inputValue.toLowerCase();
-      return item.title.longTitle.toLowerCase().includes(searchTerm);
-    });
-    if(inputValue){
-      setSearchData(filterData);
-    }else{
-      setSearchData([])
-    }
-  };
+  const handleSearch = (e)=>{
+       setSearch(e.target.value)
+  }
 
+  const data = useSearchProduct(search)
+
+  // const data = useSearchProduct(search)
   const handleScroll = useCallback(() => {
     // find current scroll position
     const currentScrollPos = window.pageYOffset;
@@ -74,8 +65,8 @@ const Navbar = ({ showNavbar }) => {
             <i class="fas fa-search" id="one"></i>
           </div>
           <div className="options">
-            {searchData &&
-              searchData.map((item) => (
+            {data &&
+              data?.map((item) => (
                 <div key={item.id}>
                   <Link
                     to={`/getproductsone/${item.id}`}

@@ -18,7 +18,7 @@ export const getProducts = async () => {
 
 export const getOneProduct = (id) => {
   const data = queryClient.getQueryData(["products"]);
-  const filterData = data.filter((item) => item.id == id);
+  const filterData = data?.filter((item) => item.id == id);
   const singleProduct = filterData[0];
   return singleProduct;
 };
