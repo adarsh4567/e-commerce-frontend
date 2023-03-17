@@ -12,7 +12,6 @@ const Navbar = ({ showNavbar }) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [search, setSearch] = useState();
-
   const handleSearch = (e)=>{
        setSearch(e.target.value)
   }
