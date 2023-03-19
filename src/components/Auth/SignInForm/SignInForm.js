@@ -1,12 +1,9 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState } from "react";
 import { SocialIcons } from "../SocialIcons";
-import { setSignData,userDetailState } from "../../../features/authSlice";
 
 export const SignInForm = () => {
-  const username = useSelector(userDetailState);
-  const password = useSelector(userDetailState);
-  const dispatch = useDispatch();
+  const [username,setUsername] = useState();
+  const [password,setPassword] = useState();
   return (
     <form action="#" className="sign-in-form">
       <h2 className="title">Sign in</h2>
@@ -16,7 +13,7 @@ export const SignInForm = () => {
           name="username"
           value={username}
           onChange={(e) =>
-            dispatch(setSignData({ username: e.target.value }))
+            setUsername(e.target.value)
           }
           type="text"
           placeholder="Username"
@@ -27,7 +24,7 @@ export const SignInForm = () => {
         <input
           name="password"
           onChange={(e) =>
-            dispatch(setSignData({ password: e.target.value }))
+           setPassword(e.target.value)
           }
           value={password}
           type="password"
