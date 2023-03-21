@@ -1,19 +1,43 @@
 import React, { useState } from "react";
 import { SocialIcons } from "../SocialIcons";
+import { useNavigate } from "react-router-dom";
+import {useDispatch} from 'react-redux'
+import axios from "axios";
+import { setUserDetails } from "../../../features/authSlice";
 
 export const SignInForm = () => {
-  const [username,setUsername] = useState();
+  const [email,setEmail] = useState();
   const [password,setPassword] = useState();
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const handleLogin = async(e)=> {
+    e.preventDefault();
+    const response = await axios.post('http://localhost:8000/login',{
+      email,
+      password
+    })
+    const data = await response.data;
+    if(data){
+      dispatch(setUserDetails({
+        name:data.username,
+        email:data.email,
+        token:data.token
+      }))
+      navigate('/')
+    }
+    
+
+  }
   return (
-    <form action="#" className="sign-in-form">
+    <form action="#" onSubmit={handleLogin} className="sign-in-form">
       <h2 className="title">Sign in</h2>
       <div className="input-field">
         <i class="fas fa-user"></i>
         <input
-          name="username"
-          value={username}
+          name="email"
+          value={email}
           onChange={(e) =>
-            setUsername(e.target.value)
+            setEmail(e.target.value)
           }
           type="text"
           placeholder="Username"
