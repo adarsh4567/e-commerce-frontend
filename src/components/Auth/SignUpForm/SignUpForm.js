@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import { SocialIcons } from '../SocialIcons';
 import axios from 'axios'
-import {useSelector,useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
+import { setUserDetails } from '../../../features/authSlice';
+import { useNavigate } from 'react-router-dom';
 
 export const SignUpForm = () => {
  const [username,setUsername] = useState();
  const [password,setPassword] = useState();
  const [email,setEmail] = useState();
 const dispatch = useDispatch()
+const navigate = useNavigate();
 
 
 const handleSubmit = async(e)=>{
@@ -23,8 +26,8 @@ const handleSubmit = async(e)=>{
       name:data.username,
       email:data.email,
       token:data.token
-  
     }))
+     navigate('/')
   }
 }
  

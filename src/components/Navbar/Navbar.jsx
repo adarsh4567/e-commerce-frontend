@@ -99,7 +99,7 @@ const Navbar = ({ showNavbar }) => {
             </Button>
           </div>
           <div className="cart_btn">
-            <Button onClick={() => navigate("/cart")}>
+            <Button onClick={() => navigate("/buynow")}>
               <Badge badgeContent={4} color="primary">
                 <ShoppingCart id="icon" style={{ color: "white" }} />
               </Badge>
