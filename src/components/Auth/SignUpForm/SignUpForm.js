@@ -5,7 +5,7 @@ import {useDispatch} from 'react-redux'
 import { setUserDetails } from '../../../features/authSlice';
 import { useNavigate } from 'react-router-dom';
 
-export const SignUpForm = () => {
+export const SignUpForm = ({isSignUp,setIsSignUp}) => {
  const [username,setUsername] = useState();
  const [password,setPassword] = useState();
  const [email,setEmail] = useState();
@@ -27,7 +27,7 @@ const handleSubmit = async(e)=>{
       email:data.email,
       token:data.token
     }))
-     navigate('/')
+     setIsSignUp(!isSignUp)
   }
 }
  
