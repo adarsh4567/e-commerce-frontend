@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import {useDispatch} from 'react-redux'
 import axios from "axios";
 import { setUserDetails } from "../../../features/authSlice";
+import { api } from "../../../api";
 
 export const SignInForm = () => {
   const [email,setEmail] = useState();
@@ -12,7 +13,7 @@ export const SignInForm = () => {
   const dispatch = useDispatch()
   const handleLogin = async(e)=> {
     e.preventDefault();
-    const response = await axios.post('http://localhost:8000/login',{
+    const response = await api.post('http://localhost:8000/login',{
       email,
       password
     })

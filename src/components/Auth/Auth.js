@@ -54,7 +54,7 @@ const Auth = () => {
       <div className="forms-container">
         <div className="signin-signup">
           <SignInForm />
-          <SignUpForm />
+          <SignUpForm setIsSignUp={setIsSignUp} isSignUp={isSignUp} />
         </div>
       </div>
       <div className="panels-container">
