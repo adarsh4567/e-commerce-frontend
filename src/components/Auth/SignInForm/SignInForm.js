@@ -17,15 +17,9 @@ export const SignInForm = () => {
       email,
       password
     })
-    const data = await response.data;
-    if(data){
-      dispatch(setUserDetails({
-        name:data.username,
-        email:data.email,
-        token:data.token
-      }))
-      navigate('/')
-    }
+    await response.data;
+
+    navigate('/')
     
 
   }

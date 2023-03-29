@@ -4,18 +4,18 @@ import axios from 'axios'
 import {useDispatch} from 'react-redux'
 import { setUserDetails } from '../../../features/authSlice';
 import { useNavigate } from 'react-router-dom';
+import { api } from '../../../api';
 
 export const SignUpForm = ({isSignUp,setIsSignUp}) => {
  const [username,setUsername] = useState();
  const [password,setPassword] = useState();
  const [email,setEmail] = useState();
 const dispatch = useDispatch()
-const navigate = useNavigate();
 
 
 const handleSubmit = async(e)=>{
   e.preventDefault();
-  const response = await axios.post('http://localhost:8000/register',{
+  const response = await api.post('http://localhost:8000/register',{
     username,
     email,
     password
