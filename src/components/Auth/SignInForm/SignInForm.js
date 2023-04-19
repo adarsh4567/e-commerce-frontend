@@ -17,10 +17,17 @@ export const SignInForm = () => {
       email,
       password
     })
-    await response.data;
+    const data = await response.data;
+    if(data){
+      dispatch(setUserDetails({
+        name:data.username,
+        email:data.email,
+        token:data.token,
+        userId:data._id
+    }))
 
     navigate('/')
-    
+  }
 
   }
   return (

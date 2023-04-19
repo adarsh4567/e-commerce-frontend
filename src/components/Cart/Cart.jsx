@@ -5,6 +5,8 @@ import Navbar from "../Navbar/Navbar";
 import "./cart.css";
 import { useParams } from "react-router-dom";
 import Slide from "../slide/slide";
+import { useSelector } from "react-redux";
+import { api } from "../../api";
 
 const offerData = [
   "Bank Offer5% Cashback on  State Bank India CardT&C",
@@ -17,6 +19,17 @@ const offerData = [
 const Cart = () => {  
   const {id} = useParams()
   const {data} = useFetchOneProduct(id)
+  const {userId} = useSelector(({userReducer})=> userReducer)
+  
+  const addToCart = async(e)=> {
+      e.preventDefault()
+      const response = await api.post(`http://localhost:8000/cart/${id}`, {
+        userId
+      });
+     const data =  await response.data
+     console.log(data,'response cart-----');
+  }
+
   useEffect(()=>{
    window.scrollTo(0,0)
   },[])
@@ -32,7 +45,7 @@ const Cart = () => {
             />
             <div className='cart_btn'>
             <button class="button type1">Buy Now</button>
-            <button class="button type1">Add To Cart</button>
+            <button class="button type1" onClick={addToCart}>Add To Cart</button>
             </div>
           </div>
           <div className="right_cart">
