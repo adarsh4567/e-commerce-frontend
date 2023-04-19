@@ -22,11 +22,12 @@ export const SignInForm = () => {
       dispatch(setUserDetails({
         name:data.username,
         email:data.email,
-        token:data.token
-      }))
-      navigate('/')
-    }
-    
+        token:data.token,
+        userId:data._id
+    }))
+
+    navigate('/')
+  }
 
   }
   return (
