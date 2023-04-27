@@ -5,6 +5,7 @@ import {useDispatch} from 'react-redux'
 import axios from "axios";
 import { setUserDetails } from "../../../features/authSlice";
 import { api } from "../../../api";
+import { setUserCart } from "../../../features/cartSlice";
 
 export const SignInForm = () => {
   const [email,setEmail] = useState();
@@ -18,6 +19,7 @@ export const SignInForm = () => {
       password
     })
     const data = await response.data;
+    console.log(data,'data');
     if(data){
       dispatch(setUserDetails({
         name:data.username,
@@ -25,6 +27,8 @@ export const SignInForm = () => {
         token:data.token,
         userId:data._id
     }))
+
+    dispatch(setUserCart({cart:data.carts}))
 
     navigate('/')
   }

@@ -26,18 +26,7 @@ const MainComponent = () => {
             </div>
               <div class="card">
                 <div class="float-dots">
-                  <div>
-                    <span>30% OFF</span>
-                  </div>
-                  <div>
-                    <span>₹3000</span>
-                  </div>
-                  <div></div>
                 </div>
-                <div class="title">
-                  <h1>White Headset</h1>
-                </div>
-
                 <div class="image"></div>
 
                 <div class="card-footer">
