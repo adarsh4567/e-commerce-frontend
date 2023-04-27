@@ -330,8 +330,8 @@ main {
 
 .card .image {
 
-    width: 430px;
-    height: 400px;
+    width: 530px;
+    height: 500px;
     position: relative;
     z-index: 100;
     margin: 70px auto;
@@ -339,8 +339,14 @@ main {
     background-size: contain;
     background-position: center;
     transition: transform .6s ease, background-image .5s ease;
+    animation: floating 4s infinite linear;
 }
 
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 40px); }
+  100%   { transform: translate(0, -0px); }   
+}
 
 .card:hover .image {
 

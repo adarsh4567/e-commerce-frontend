@@ -1,0 +1,44 @@
+.drawer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 20rem;
+    background-color: white;
+    margin: 1rem;
+    border-bottom: 1px solid gray;
+}
+.cover{
+    display: flex;
+    height: 95vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.leftDrawer{
+    width: 8rem;
+    height: 8rem;
+    margin: .2rem;
+}
+.rightDrawer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+.addRemove{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+.addRemove div{
+    margin-right: 1rem;
+}
+.drawerBtn{
+    display: flex;
+    margin-left: 20%;
+    flex-direction: row;
+}

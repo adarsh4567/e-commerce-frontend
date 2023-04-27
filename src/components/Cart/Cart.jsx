@@ -1,12 +1,14 @@
 import { MdLocalOffer } from "react-icons/md";
-import React, { useEffect } from "react";
-import { useFetchOneProduct } from "../../customHooks/productsHook";
+import React, { useEffect, useState } from "react";
+import { useFetchOneProduct, useFetchProducts } from "../../customHooks/productsHook";
 import Navbar from "../Navbar/Navbar";
 import "./cart.css";
 import { useParams } from "react-router-dom";
 import Slide from "../slide/slide";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { api } from "../../api";
+import SideCard from "../Drawer/SideCard";
+import { setUserCart, setUserCartUpdate } from "../../features/cartSlice";
 
 const offerData = [
   "Bank Offer5% Cashback on  State Bank India CardT&C",
@@ -19,22 +21,31 @@ const offerData = [
 const Cart = () => {  
   const {id} = useParams()
   const {data} = useFetchOneProduct(id)
+  const [open,setOpen] = useState(false)
   const {userId} = useSelector(({userReducer})=> userReducer)
+  const dispatch = useDispatch()
+  const allProducts = useFetchProducts()
+  const products = allProducts.data
   
   const addToCart = async(e)=> {
-      e.preventDefault()
+      e.preventDefault() 
+      const addProduct = products.filter((item)=> item.id===id)
+      dispatch(setUserCartUpdate({cartUpdate:addProduct}))
+      setOpen(true)
       const response = await api.post(`http://localhost:8000/cart/${id}`, {
         userId
       });
      const data =  await response.data
-     console.log(data,'response cart-----');
+     if(data){
+      dispatch(setUserCart({cart:data.carts}))
+     }
   }
-
   useEffect(()=>{
    window.scrollTo(0,0)
   },[])
   return (
     <>
+    <SideCard open={open} setOpen={setOpen}/>
       <div className="cart_section">
        <Navbar showNavbar={true} />
         <div className="cart_container">
